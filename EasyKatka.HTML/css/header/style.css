@@ -1,0 +1,23 @@
+.b-header {
+    min-width: 768px;
+    position: relative;
+    overflow: hidden;
+}
+
+.b-header .b-header__logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+}
+
+.b-header__content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+}
+
+
+.b-main-content {
+    background: #ecedec;
+}

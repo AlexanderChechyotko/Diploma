@@ -1,0 +1,20 @@
+.b-logo {
+    height: 100px;
+    width: 100px;
+    background: #292929;
+}
+
+.b-logo .b-logo__image {
+    height: 80px;
+    margin: 0 auto;
+    display: block;
+}
+
+.b-logo .b-logo__title {
+    height: 20px;
+    line-height: 20px;
+    color: #ecd481;
+    font-family: Arial;
+    font-size: 14px;
+    text-align: center;
+}

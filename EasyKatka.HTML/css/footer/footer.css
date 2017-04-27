@@ -1,0 +1,15 @@
+.b-footer {
+
+}
+
+.b-footer .b-footer__stuff {
+    height: 300px;
+    background: #3b3b3b;
+}
+
+.b-footer .b-footer__copyright {
+    text-align: center;
+    background: #272727;
+    color: #fff;
+    padding: 15px 20px;
+}

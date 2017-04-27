@@ -1,0 +1,45 @@
+.b-user-panel {
+    background: #3b3b3b;
+}
+
+.b-user-panel .b-user-panel__nav {
+    list-style: none;
+    
+}
+
+.b-user-panel .b-user-panel__item {
+    float: left;
+    width: 20%;
+}
+
+.b-user-panel .b-user-panel__item:last-child {
+    background: #ecd481;
+}
+
+.b-user-panel .b-user-panel__button {
+    box-sizing: border-box;
+    text-decoration: none;
+    display: block;
+    height: 66px;
+    line-height: 66px;
+    color: #e6e6e6;
+    text-align: center;
+    border-right: 1px solid #000;
+}
+
+.b-user-panel .b-user-panel__button:hover {
+    color: #fff;
+    line-height: 56px;
+    border: 5px solid #222222;
+}
+
+.b-user-panel .b-user-panel__item:last-child .b-user-panel__button {
+    color: #fff;
+    border: none;
+}
+
+.b-user-panel .b-user-panel__item:last-child .b-user-panel__button:hover {
+    background: #ecd481;
+    line-height: 56px;
+    border: 5px solid #eac031;
+}
