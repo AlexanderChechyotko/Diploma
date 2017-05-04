@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using EasyKatka.Providers.ApplicationContext;
 
 namespace EasyKatka.API
 {
@@ -24,14 +25,13 @@ namespace EasyKatka.API
 
         public IConfigurationRoot Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
+            string connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=EasyKatka.Database;Trusted_Connection=True;MultipleActiveResultSets=true";
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString));
             services.AddMvc();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
