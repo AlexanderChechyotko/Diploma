@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EasyKatka.Models
+namespace EasyKatka.Providers.ApplicationContext
 {
-    class Lot
+    public class ApplicationContext
     {
     }
 }

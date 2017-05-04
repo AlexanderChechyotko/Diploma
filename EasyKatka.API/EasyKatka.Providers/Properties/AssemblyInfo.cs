@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Управление общими сведениями о сборке осуществляется с помощью 
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("EasyKatka.Models")]
+[assembly: AssemblyTitle("EasyKatka.Providers")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("EasyKatka.Models")]
+[assembly: AssemblyProduct("EasyKatka.Providers")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("ebee283e-4b43-46e6-8d45-117d09b4de2f")]
+[assembly: Guid("72ce416a-f3f6-44ac-9498-0d12cc6d629f")]
 
 // Сведения о версии сборки состоят из следующих четырех значений:
 //

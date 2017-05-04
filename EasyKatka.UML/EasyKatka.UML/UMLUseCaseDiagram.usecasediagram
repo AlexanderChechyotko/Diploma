@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="80fb197a-6825-4730-946d-0bf59f3af1bc" name="UMLUseCaseDiagram" linkedPackageId="822bb795-c19a-4147-841b-ec81cec47df4" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="8e8307b0-e949-4d45-8a07-035e1f8f238a">
+      <elementDefinition Id="0c27b24c-60da-4bcc-a2ef-745ee95efba4" />
+      <body>Любой пользователь сети
+</body>
+      <annotatedElements>
+        <actorMoniker Id="ba2b17a1-602b-49a2-83bf-ca76861a1838" LastKnownName="Пользователь" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="a147a7e2-7086-4999-9632-247eda92c058">
+      <profileInstance Id="08e3ab33-28d8-47e7-a937-125200327494" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="4bf40457-3de4-4852-9976-c82728756872">
+      <profileInstance Id="89c88316-c984-434b-969f-09ba1af9263d" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="6c5ee8b0-0bbe-45a1-8b01-973bf53cc496" name="Покупатель" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3c5eeaec-df91-4edf-bbf1-f097e49ecc7e" />
+        <generalsInternal>
+          <generalization Id="31214592-f828-4136-98d5-2d36cf5e15a6" isSubstitutable="false">
+            <actorMoniker Id="ba2b17a1-602b-49a2-83bf-ca76861a1838" LastKnownName="Пользователь" />
+            <elementDefinition Id="b9a26077-ff88-4115-a384-05f411c44c50" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="46e9bdd1-4b98-48a1-976b-ef1128b90788" isDerived="false" sourceEndRoleName="Покупатель" targetEndRoleName="Покупка бидов" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="04b38d2f-283e-41fc-8530-942814058d2d" LastKnownName="Покупка бидов" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c7ab5649-1c90-4a83-b50a-c84f9ac410ff" name="Покупатель" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a62c76ed-6ab8-44e1-a448-8b7c936fe26b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0ba06364-9e9f-4a6b-a91c-c230e654a8f8" name="Покупка бидов" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7a339fd0-12f7-4296-a248-45c9aa6df5f5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ca2ab388-dee5-4cfb-ab5b-345194a2a655" />
+          </association>
+          <association Id="59042cc1-7646-4596-9e2b-dffa3afaa876" isDerived="false" sourceEndRoleName="Покупатель" targetEndRoleName="Выбрать аукцион" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="39edfb86-2fdc-48f6-800a-0deebf623f07" LastKnownName="Выбрать аукцион" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ee7dae3e-340c-40ae-a625-10850371f8d6" name="Покупатель" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1c0b83fc-74fb-442a-9ce5-42b61d4729d4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a515ede8-9e4a-4f8c-9198-32da6dc12f47" name="Выбрать аукцион" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="34991cae-232f-42a6-97f6-edec7ed6f9db" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4fc28cf5-9cbb-491d-9d69-c09964414a9d" />
+          </association>
+          <association Id="d1e15dc3-033e-4e57-a116-c4225de9e5a9" isDerived="false" sourceEndRoleName="Покупатель" targetEndRoleName="Просмотреть историю ставок" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="b0af1772-780c-422d-95b3-4f304ca33af8" LastKnownName="Просмотреть историю ставок" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fc40f714-dbfb-462a-8444-e5e7894582f5" name="Покупатель" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="fcaeb261-7d97-4650-bb77-74d085ad6ff0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d6b5ba98-9dae-49e8-b0de-47978b74ffd0" name="Просмотреть историю ставок" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="25e84ec8-555c-4945-a5d1-97fd9f721ca1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3e9261ea-146c-4003-989f-db208f8f3e55" />
+          </association>
+          <association Id="692c82eb-d765-4db6-96ef-8fa9e4b260b0" isDerived="false" sourceEndRoleName="Покупатель" targetEndRoleName="Аукцион завершился" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="94940892-11be-46b8-bd8f-0b38763c5a24" LastKnownName="Аукцион завершился" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c077d7e6-9ad7-40c1-9aa0-3c51e2d4c130" name="Покупатель" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="86e1510b-e311-4502-a6ce-de5061379f7f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="08572f28-f885-4262-9a7a-3426898c4135" name="Аукцион завершился" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="00179cd1-ea56-4cc1-a14a-d18a40e9488f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ef82dcad-bfbc-44d6-8464-a4f3ddaf16e9" />
+          </association>
+          <association Id="27da0be4-1236-4f3b-af69-a0c32b462666" isDerived="false" sourceEndRoleName="Покупатель" targetEndRoleName="Быть победителем в аукционе" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="2cfd0a8f-87a6-4482-a1d3-77c97397df61" LastKnownName="Быть победителем в аукционе" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="67ac08f3-b920-4ff6-8900-38b5294edf9b" name="Покупатель" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8886e6df-366f-4775-8aaa-926b16827a92" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="381ffce7-20b3-4426-abe6-26cd81507904" name="Быть победителем в аукционе" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="df24e7e4-a80d-443a-924e-717048988fdd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7c6a2b0c-cf81-4c36-902c-95d4a9762694" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="f6ea2b23-c12a-44cf-8af5-9ffd4d23fb6b" name="Продавец" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f248d4a0-6b87-49b3-8e77-9c638f45abbd" />
+        <generalsInternal>
+          <generalization Id="ffd48e3a-14b5-4fa4-857b-a66d89cee0f1" isSubstitutable="false">
+            <actorMoniker Id="ba2b17a1-602b-49a2-83bf-ca76861a1838" LastKnownName="Пользователь" />
+            <elementDefinition Id="225a72a1-9a33-44a4-aafa-57acdc32ad0a" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="ce400a62-199b-4d4c-8c2e-35fbd77ed556" isDerived="false" sourceEndRoleName="Продавец" targetEndRoleName="Создать аукцион" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="fc11b292-4286-45fe-8df1-c59307c38218" LastKnownName="Создать аукцион" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1aefcc9b-5237-4b3a-935a-3f1be5c2dd84" name="Продавец" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a0800496-687d-4945-802f-dd3c733cc25e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="625059a1-365b-4e95-bdeb-a106564ed0d5" name="Создать аукцион" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f24166e2-c5ed-4bb1-a404-06424fa846f5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="58efd89d-33ed-4554-aa4e-02f0a876fb69" />
+          </association>
+          <association Id="9e900f72-a7d9-4282-b747-13d4ba412f79" isDerived="false" sourceEndRoleName="Продавец" targetEndRoleName="Изменить аукцион" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c8e01feb-1933-44b0-8cd8-5544df6832d6" LastKnownName="Изменить аукцион" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="65088e40-79de-47b1-afd6-49ef2519f9a8" name="Продавец" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="32b3f94d-44cc-4d28-ae03-1cf428b7b619" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e572adb9-9385-4644-9f2f-e02c06a15cc7" name="Изменить аукцион" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c500de44-49ce-4ed9-a26e-cc2998c25cf4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="58ec6ea7-b553-4176-8f9f-d66f12b84c04" />
+          </association>
+          <association Id="8ad2483f-edcc-48ed-a674-328b8132f06c" isDerived="false" sourceEndRoleName="Продавец" targetEndRoleName="Удалить аукцион" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ddb0baa9-025d-42ce-8d62-9b73beacf6dd" LastKnownName="Удалить аукцион" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b8fcfac7-d3a9-4c24-a7e0-4d80888f8459" name="Продавец" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="27795b52-7cc0-4597-bbb8-3506caed7c7b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="933c6848-9a4d-4ee5-bddd-87a768bb6de8" name="Удалить аукцион" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="069a7e26-4ab9-4947-84b7-1d612965fd74" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0aec70d9-58b5-4100-90fc-c85098eebca2" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="fc11b292-4286-45fe-8df1-c59307c38218" name="Создать аукцион" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ff6d1f0f-c09c-4d06-adea-1f551ba07596" />
+        <suppliersInternal>
+          <dependency Id="876eaaa8-715e-444d-b310-fbb24b2b8658">
+            <useCaseMoniker Id="59a3678c-e909-4c4b-9b9f-84db7c791e52" LastKnownName="Установить правила аукциона" />
+            <elementDefinition Id="3e01a715-c5a6-4eb1-b560-ed0754f09fac" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="ba2b17a1-602b-49a2-83bf-ca76861a1838" name="Пользователь" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cb4e5f97-2bb0-4afb-b5b5-bd5f216b8fef" />
+        <targetEnds>
+          <association Id="e2cf884b-69d9-43cd-a092-6927e50ef4fb" isDerived="false" sourceEndRoleName="Пользователь" targetEndRoleName="Регистрация" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6e0319ce-fc10-47fa-b7ed-853bd83c138c" LastKnownName="Регистрация" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c12e2bf8-39e1-4432-9d50-8816ac439b56" name="Пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f1d4e681-6551-468b-958d-c9204ec88cce" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7a21ce92-081f-4956-baf5-c0e72e8fa327" name="Регистрация" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bb32239c-c37e-4342-a7a2-bbfc562f7571" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0054cb93-8cc1-4882-8b1a-9d4e70f9a8aa" />
+          </association>
+          <association Id="20d8e988-2944-4917-9f12-a9adee9ac82e" isDerived="false" sourceEndRoleName="Пользователь" targetEndRoleName="Авторизация на сайте" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="e2681294-9efa-4eb0-bd5d-64d70008b3f8" LastKnownName="Авторизация на сайте" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6d4e304e-2895-498e-a7a0-3f1cf100f3d7" name="Пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8dc34f70-c066-4da9-a074-5ff3c68c5053" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="60a229c5-94eb-4e7a-b2c1-50e35ae85f70" name="Авторизация на сайте" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="88cccd8e-f4f6-419f-b9a7-32f89590361f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ecea2e1a-7825-41d7-a608-9da242913eea" />
+          </association>
+          <association Id="aae65193-dd0b-489e-bbbc-2d1853472bb5" isDerived="false" sourceEndRoleName="Пользователь" targetEndRoleName="Изменение данных аккаунта" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="931f1b5a-10ee-4a08-bdac-4a66c5b2e525" LastKnownName="Изменение данных аккаунта" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="efa7ba25-37ab-4e53-bdb2-5b5c91a8ba0b" name="Пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8954116c-0abc-4a9a-91dc-8ae7936c936c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5401d194-0bdb-4703-8c0d-75f440024477" name="Изменение данных аккаунта" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="621b8717-0b60-40b2-85e9-22d299db3bcd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ad0be1e9-28a6-4d11-85fd-9c4f41686163" />
+          </association>
+          <association Id="0591ab2e-48a7-4565-9bd4-3bfdd3bcc5a3" isDerived="false" sourceEndRoleName="Пользователь" targetEndRoleName="Просмотр каталога аукционов" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1c5a01a9-2e71-4d74-9574-2c6c42014492" LastKnownName="Просмотр каталога аукционов" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2653b2cb-86f5-4829-b480-5e5662f64494" name="Пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cf4ec45a-cc99-407e-80ed-aa6a5096caeb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d7c50e6d-630f-47b8-a0a4-75ca75e4737b" name="Просмотр каталога аукционов" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6e6d5f63-4318-4c2a-94ce-9b7b6bdef9e2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="42191b97-2a7d-40dd-8e19-e10771dd57ce" />
+          </association>
+          <association Id="850804e6-0d8c-40a8-afca-b24b9a6c31ea" isDerived="false" sourceEndRoleName="Пользователь" targetEndRoleName="Восстановление пароля" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="57490054-7e6c-497d-a310-eaa13f535b8f" LastKnownName="Восстановление пароля" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7b80a4ef-bf3c-4d21-82d5-04f83e2bd6de" name="Пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8582d4e1-8f47-4ab0-b69b-b76860efa753" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4fa1310a-8f66-4a43-8709-26e94ec961df" name="Восстановление пароля" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8fb38645-e3fc-498f-802e-9ca5f47022ca" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="bdb4749a-ddd0-4134-99d5-035992c3c6bc" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6e0319ce-fc10-47fa-b7ed-853bd83c138c" name="Регистрация" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="dd92b145-f5f6-4103-bb76-4350e6952375" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="c8e01feb-1933-44b0-8cd8-5544df6832d6" name="Изменить аукцион" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7e9f00b2-af85-4922-b239-ef29efd0525c" />
+        <additions>
+          <include Id="fd13c41f-5242-4e89-8f92-3143ec18753b">
+            <useCaseMoniker Id="ab326c09-96ea-44e4-85fa-a6c52548352d" LastKnownName="Подтвердить" />
+            <elementDefinition Id="08f3c186-dbb4-4dd1-aef4-960f1a7ad39c" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ddb0baa9-025d-42ce-8d62-9b73beacf6dd" name="Удалить аукцион" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1c707511-b82c-4341-ba43-31ebfce2a0de" />
+        <additions>
+          <include Id="42775a5c-c421-4d43-981e-bf6749892d3e">
+            <useCaseMoniker Id="ab326c09-96ea-44e4-85fa-a6c52548352d" LastKnownName="Подтвердить" />
+            <elementDefinition Id="a8719d16-a6b1-484b-a3e7-86f7f14fd975" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ab326c09-96ea-44e4-85fa-a6c52548352d" name="Подтвердить" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="476bbbd6-1b00-4794-b85e-db79ad1fa557" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e2681294-9efa-4eb0-bd5d-64d70008b3f8" name="Авторизация на сайте" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d56e179e-edbd-48c2-a2f1-48411d963a5f" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="04b38d2f-283e-41fc-8530-942814058d2d" name="Покупка бидов" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="68720b53-85a5-46cf-8904-62a0521f66e3" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="931f1b5a-10ee-4a08-bdac-4a66c5b2e525" name="Изменение данных аккаунта" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4f8911d1-72e5-4243-93a1-cfd5bc47d400" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1c5a01a9-2e71-4d74-9574-2c6c42014492" name="Просмотр каталога аукционов" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="207e8780-37f6-45fb-947e-483826947d78" />
+        <extendedCases>
+          <extend Id="7ec8ee97-0ee2-4a0e-82ea-6f2ce5930400">
+            <useCaseMoniker Id="03608fca-4394-4e53-8ca2-15d383e38eb9" LastKnownName="Фильтрация по парамметрам" />
+            <elementDefinition Id="e27071d2-0ec4-48b6-bcc1-5edc5445475a" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="03608fca-4394-4e53-8ca2-15d383e38eb9" name="Фильтрация по парамметрам" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b237c4ab-a80d-4a8b-911a-eed7b8ed58de" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="59a3678c-e909-4c4b-9b9f-84db7c791e52" name="Установить правила аукциона" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="19463710-5ddf-4ba7-aded-e00c0d413fa7" />
+        <additions>
+          <include Id="68996e9e-51d2-4c9c-8acb-7851cd199cb1">
+            <useCaseMoniker Id="ab326c09-96ea-44e4-85fa-a6c52548352d" LastKnownName="Подтвердить" />
+            <elementDefinition Id="920afcc6-c283-4384-8960-afae571cebc3" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="39edfb86-2fdc-48f6-800a-0deebf623f07" name="Выбрать аукцион" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4875d080-631a-4b48-83a0-f2a345f30a13" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9c4709ba-66fe-42bc-93a9-9fb707648a2b" name="Сделать ставку" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a2608e70-2257-4399-a218-506aa6391aaf" />
+        <suppliersInternal>
+          <dependency Id="bb66313e-ea85-4219-a157-06519d17825d">
+            <useCaseMoniker Id="39edfb86-2fdc-48f6-800a-0deebf623f07" LastKnownName="Выбрать аукцион" />
+            <elementDefinition Id="8c6647cd-9466-4075-bccf-22d49b9b0595" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b0af1772-780c-422d-95b3-4f304ca33af8" name="Просмотреть историю ставок" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="12ebe306-2e29-4fc7-8312-f4da8777fdc3" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2cfd0a8f-87a6-4482-a1d3-77c97397df61" name="Быть победителем в аукционе" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c7c51b69-35e8-4c2f-baf9-57d70081a732" />
+        <additions>
+          <include Id="9d574bac-b7bf-458d-9fc2-12c92a379cef">
+            <useCaseMoniker Id="6b53bc18-a28c-49de-9cff-4d983db452fc" LastKnownName="Закрытие аукциона" />
+            <elementDefinition Id="679daa71-e2b5-4561-b137-ab179bdafd13" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="94940892-11be-46b8-bd8f-0b38763c5a24" name="Аукцион завершился" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="17dca64c-1e6f-4637-b700-a74693e4e6bb" />
+        <additions>
+          <include Id="8eedbc66-6a70-41ff-8e8d-ac58b06febaf">
+            <useCaseMoniker Id="6b53bc18-a28c-49de-9cff-4d983db452fc" LastKnownName="Закрытие аукциона" />
+            <elementDefinition Id="fe2bc208-326b-4934-9b94-30e6cf4aeda3" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6b53bc18-a28c-49de-9cff-4d983db452fc" name="Закрытие аукциона" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fed0349e-440e-44d1-80c5-3c13f1208c4b" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="57490054-7e6c-497d-a310-eaa13f535b8f" name="Восстановление пароля" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="55f75f96-6792-4310-b8c1-85954f9999ca" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="822bb795-c19a-4147-841b-ec81cec47df4" name="EasyKatka.UML">
+    <elementDefinition Id="699ad306-be1f-46f4-9aac-a070be5c9c4c" />
+  </package>
+</useCaseModelRoot>
