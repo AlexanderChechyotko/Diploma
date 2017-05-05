@@ -9,13 +9,9 @@ import { AuthenticationService } from './services/authentication/authentication.
     encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-    title = 'EasyKatka';
-    componentSelectorActive: boolean;
     isAuthenticated: boolean;
-    uiIsBlocked = false;
     
     constructor(private authenticationService: AuthenticationService) {
-        this.componentSelectorActive = false;
         this.isAuthenticated = true;
     }
  }

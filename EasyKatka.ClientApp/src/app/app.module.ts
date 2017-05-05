@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpModule }   from '@angular/http';
 
 import { RouteConfig } from './route-config';
 
@@ -14,11 +15,19 @@ import { AuthorizationComponent } from './components/authorization/authorization
 import { LoginComponent } from './components/authorization/login/login.component';
 
 // Services
+import { HttpClientService } from "./services/http-client/http-client.service";
 import { SessionService } from './services/session/session.service';
 import { AuthenticationService } from './services/authentication/authentication.service';
+import { AuctionService } from "./services/auction/auction.service";
+
 
 @NgModule({
-    imports:[BrowserModule, FormsModule,  RouterModule.forRoot(RouteConfig.registeredRoutes())],
+    imports:[
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        //RouterModule.forRoot(RouteConfig.registeredRoutes())
+    ],
     declarations: [
         AppComponent,
         AppHeaderComponent,
@@ -28,8 +37,10 @@ import { AuthenticationService } from './services/authentication/authentication.
         HomeComponent
     ],
     providers: [
+        HttpClientService,
         SessionService,
-        AuthenticationService
+        AuthenticationService,
+        AuctionService
     ],
     bootstrap: [AppComponent]
 })
