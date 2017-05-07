@@ -6,7 +6,7 @@ import { SessionService } from "../../../services/session/session.service";
 @Component({
     selector: 'app-header',
     templateUrl: 'app-header.component.html',
-    styleUrls: ['app-header.component.css']
+    styleUrls: ['app-header.component.scss']
 })
 export class AppHeaderComponent {
     @Input() isAuthenticated: boolean;

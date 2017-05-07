@@ -6,17 +6,17 @@
     <div class="b-header__content">
         <div class="b-super-header b-header__info-nav clearfix">
             <ul class="b-super-header__nav">
-                <li class="b-super-header__item"><a href="#" class="b-super-header__link">Главная</a></li>
+                <li class="b-super-header__item"><a routerLink="/" class="b-super-header__link">Главная</a></li>
                 <li class="b-super-header__item"><a href="#" class="b-super-header__link">Новости</a></li>
                 <li class="b-super-header__item"><a href="#" class="b-super-header__link">Как это работает</a></li>
                 <li class="b-super-header__item"><a href="#" class="b-super-header__link">Контакты</a></li>
                 <li class="b-super-header__item"><a href="#" class="b-super-header__link"></a></li>
                 <li class="b-super-header__item">
-                    <a href="#" class="b-super-header__link" *ngIf="!isAuthenticated;else authenticated">
+                    <a routerLink="/authentication" class="b-super-header__link" *ngIf="!isAuthenticated;else authenticated">
                         Login/Register
                     </a>
                     <ng-template #authenticated>  
-                        <a href="#" class="b-super-header__link">
+                        <a href="/account" class="b-super-header__link">
                             Alexander
                         </a>
                     </ng-template>  
@@ -25,11 +25,11 @@
         </div>
         <div class="b-user-panel">
             <ul class="b-user-panel__nav clearfix">
-                <li class="b-user-panel__item"><a href="#" class="b-user-panel__button">Аукционы</a></li>
-                <li class="b-user-panel__item"><a href="#" class="b-user-panel__button">Добавить аукцион</a></li>
-                <li class="b-user-panel__item"><a href="#" class="b-user-panel__button">Завершившиеся аукционы</a></li>
-                <li class="b-user-panel__item"><a href="#" class="b-user-panel__button">Купить биды</a></li>
-                <li class="b-user-panel__item"><a href="#" class="b-user-panel__button">Bid Count: 34</a></li>
+                <li class="b-user-panel__item"><a routerLink="/auctions" routerLinkActive="b-user-panel__button_active" class="b-user-panel__button">Аукционы</a></li>
+                <li class="b-user-panel__item"><a routerLink="/addAuction" routerLinkActive="b-user-panel__button_active" class="b-user-panel__button">Добавить аукцион</a></li>
+                <li class="b-user-panel__item"><a routerLink="/endedAuctions" routerLinkActive="b-user-panel__button_active" class="b-user-panel__button">Завершившиеся аукционы</a></li>
+                <li class="b-user-panel__item"><a routerLink="/buyBids" routerLinkActive="b-user-panel__button_active" class="b-user-panel__button">Купить биды</a></li>
+                <li class="b-user-panel__item"><span class="b-user-panel__button">Bid Count: 34</span></li>
             </ul>
         </div>
     </div>

@@ -1,0 +1,125 @@
+/* Logo */
+.b-logo {
+    height: 100px;
+    width: 100px;
+    background: #292929;
+
+    &__image {
+        height: 80px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    &__title {
+        height: 20px;
+        line-height: 20px;
+        color: #ecd481;
+        font-family: Arial;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+/* Header */
+.b-header {
+    min-width: 768px;
+    position: relative;
+    overflow: hidden;
+
+    &__logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        padding-left: 100px;
+    }
+}
+
+
+.b-main-content {
+    background: #ecedec;
+}
+
+/* Super header*/
+.b-super-header {
+    background: #000;
+    padding: 8px 0;
+
+    &__nav {
+        float: right;
+        list-style: none;
+    }
+
+    &__item {
+        float: left;
+        margin-left: 20px;
+        padding: 0;
+
+        &:last-child {
+            margin-left: 40px;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #999;
+        text-decoration: none;
+        font-size: 13px;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+/* User panel */
+.b-user-panel {
+    background: #3b3b3b;
+
+    &__nav {
+        list-style: none;
+    }
+
+    &__item {
+        float: left;
+        width: 20%;
+
+        &:last-child {
+            background: #ecd481;
+        }
+    }
+
+    &__button {
+        box-sizing: border-box;
+        text-decoration: none;
+        display: block;
+        height: 66px;
+        line-height: 66px;
+        color: #e6e6e6;
+        text-align: center;
+        border-right: 1px solid #000;
+
+        &:hover,
+        &_active {
+            color: #fff;
+            line-height: 56px;
+            border: 5px solid #222222;
+        } 
+    }
+
+    &__item:last-child .b-user-panel__button {
+        color: #000;
+        border: none;
+
+        &:hover {
+            background: #ecd481;
+            line-height: 56px;
+            border: 5px solid #eac031;
+        }
+    }
+}

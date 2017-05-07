@@ -1,4 +1,3 @@
 <app-header [isAuthenticated]="isAuthenticated"></app-header>
-<login *ngIf="!isAuthenticated"></login>
-<home *ngIf="isAuthenticated"></home>
+<router-outlet></router-outlet>
 <app-footer></app-footer>
