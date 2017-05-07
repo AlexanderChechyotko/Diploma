@@ -1,8 +1,8 @@
 <div class="b-header clearfix">
-    <div class="b-logo b-header__logo">
+    <a routerLink="/" class="b-logo b-header__logo">
         <img class="b-logo__image" src="../../../../assets/images/logo/icon-logo.png" alt="">
         <div class="b-logo__title">EasyKatka</div>            
-    </div>
+    </a>
     <div class="b-header__content">
         <div class="b-super-header b-header__info-nav clearfix">
             <ul class="b-super-header__nav">
@@ -16,7 +16,7 @@
                         Login/Register
                     </a>
                     <ng-template #authenticated>  
-                        <a href="/account" class="b-super-header__link">
+                        <a [routerLink]="['/account', '4324']" class="b-super-header__link">
                             Alexander
                         </a>
                     </ng-template>  

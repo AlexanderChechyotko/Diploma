@@ -10,7 +10,6 @@ export class AuthenticationGuard implements CanActivate {
     constructor(private authenticationService: AuthenticationService, private router: Router) {}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : Observable<boolean> | boolean {
-        debugger;
         if (this.authenticationService.isAuthenticated.getValue() && state.url !== '/authentication') {
             return true;
         }

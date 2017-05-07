@@ -31,11 +31,12 @@ import { AuthenticationGuard } from "./guards/authentication.guard";
 const appRoutes: Routes =[
     { path: '', component: HomeComponent},
     { path: 'authentication', component: LoginComponent, canActivate: [AuthenticationGuard]},
+	{ path: 'account/:id', component: AccountInformationComponent, canActivate: [AuthenticationGuard]},
 	{ path: 'auctions', component: HomeComponent},
 	{ path: 'addAuction', component: AddAuctionComponent, canActivate: [AuthenticationGuard]},
 	{ path: 'endedAuctions', component: EndedAuctionsComponent, canActivate: [AuthenticationGuard]},
 	{ path: 'buyBids', component: BuyBidsComponent, canActivate: [AuthenticationGuard]},
-	{ path: 'lot', component: LotInformationComponent},
+	{ path: 'lot/:id', component: LotInformationComponent},
 	{ path: '**', component: NotFoundComponent }
 ];
 
