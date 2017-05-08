@@ -14,4 +14,20 @@
             </div>
         </div>
     </form>
+    <form class="b-sigin__form" (ngSubmit)="onRegister()">
+        <input type="text" name="username" placeholder="USERNAME" class="b-sigin__input b-sigin__input_text" [(ngModel)]="registerForm.username" />
+        <input type="email" name="email" placeholder="EMAIL" class="b-sigin__input b-sigin__input_text" [(ngModel)]="registerForm.email" />
+        <input type="password" name="password" placeholder="PASSWORD" class="b-sigin__input b-sigin__input_password" [(ngModel)]="registerForm.password" />
+        <div class="b-sigin__footer">
+            <div class="b-sigin__footer-item">
+                <a href="#" class="b-sigin__remember">Забыли пароль?</a>
+            </div>
+            <div class="b-sigin__footer-item">
+                <input *ngIf="!loading;else displayLoading" type="submit" class="b-sigin__input b-sigin__input-submit" value="Зарегестрироваться" />
+                <ng-template #displayLoading>
+                    <img class="b-sigin__loading" src="../../assets/images/loading/loading.gif" alt="">
+                </ng-template>
+            </div>
+        </div>
+    </form>
 </div>

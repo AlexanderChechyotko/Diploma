@@ -44,8 +44,16 @@ export class AuthenticationService {
 
     }
 
-    public signUp() {
+    public register(form) {
+        let body = {
+            username: form.username,
+            email: form.email,
+            password: form.password
+        };
 
+        let url = environment.apiSettings.methods.register;
+
+        return this.httpClientService.post(url, body);
     }
 
     public forgetPassword() {

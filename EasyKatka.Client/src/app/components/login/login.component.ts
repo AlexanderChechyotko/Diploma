@@ -10,6 +10,7 @@ import { AuthenticationService } from "../../services/authentication/authenticat
 })
 export class LoginComponent {
 	loginForm;
+	registerForm;
 	loading: boolean;
 
 	constructor(private authenticationService: AuthenticationService) {
@@ -18,10 +19,22 @@ export class LoginComponent {
     		password: ''
     	};
 
+		this.registerForm = {
+			username: '',
+			email: '',
+			password: ''
+		}
+
 		this.authenticationService.loading.subscribe((status: boolean) => this.loading = status);
 	}
 
 	public onLogin() {
 		this.authenticationService.logIn(this.loginForm.username, this.loginForm.password);
+	}
+
+	public onRegister() {
+		this.authenticationService.register(this.registerForm).subscribe((response) => {
+			debugger;
+		});
 	}
 }

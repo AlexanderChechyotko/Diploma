@@ -6,5 +6,14 @@ import { Component } from "@angular/core";
 	styleUrls: ['add-auction.component.scss']
 })
 export class AddAuctionComponent {
+	lotForm;
+	loading: boolean;
 
+	constructor() {
+		this.loading = false;
+	}
+
+	public onAddLot() {
+
+	}
 }

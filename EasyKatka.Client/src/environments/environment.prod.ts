@@ -2,14 +2,14 @@ export const environment = {
     production: true,
 
     apiSettings: {
-        baseUrl: 'http://localhost:8565/',
+        baseUrl: 'http://localhost:44964/',
         methods: {
             getLots: 'api/auction/getAuctions',
             getLotInformation: '',
             getAccountInformation: '',
             logIn: 'api/authentication/login',
             logOut: 'api/authentication/logout',
-            signUp: 'api/authentication/signUp',
+            register: 'api/authentication/register',
             forgotPassword: 'api/authentication/forgot'
         }
     }

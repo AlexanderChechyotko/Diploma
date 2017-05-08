@@ -1,1 +1,6 @@
-добавить аукцион
+<div class="b-add-lot">
+    <form class="b-add-lot__form" (ngSubmit)="onAddLot()">
+        <input type="text" name="title" placeholder="TITLE" class="b-add-lot__input b-add-lot_text" [(ngModel)]="lotForm.title" />
+        <input type="submit" class="b-add-lot__input b-add-lot__input-submit" value="Добавить лот" />
+    </form>
+</div>
