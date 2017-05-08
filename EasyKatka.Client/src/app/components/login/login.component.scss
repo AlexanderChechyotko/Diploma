@@ -1,7 +1,9 @@
+$green-color: #02ab7e;
+$blue-color: #0380c1;
+
 .b-sigin {
     margin: 100px auto;
     width: 340px;
-    background: #fff;
 
     &__form {
         width: 100%;
@@ -15,11 +17,16 @@
 
     &__input_text,
     &__input_password {
+        background: #f6f6f6;
         margin-bottom: 40px;
         padding-top: 12px 0;
         width: 100%;
         border: none;
         border-bottom: 1px solid #4e5866;
+
+        &:focus {
+            border-color: $blue-color;
+        }
     }
 
     &__footer {
@@ -36,11 +43,12 @@
     &__input-submit {
         float: right;
         width: 115px;
-        border: 2px solid #2d2d2d;
+        border: 2px solid $blue-color;
+        color: $blue-color;
         background: transparent;
 
         &:hover{
-            background: #2d2d2d;
+            background: $blue-color;
             color: #fff;
         }
     }

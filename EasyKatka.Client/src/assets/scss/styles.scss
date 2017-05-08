@@ -1,10 +1,16 @@
-@import 'colors';
+@import 'defaults';
 @import 'fonts';
+
+$body-color: #f6f6f6;
 
 * {
     padding: 0;
     margin: 0;
     font-family: Arial;
+}
+
+body {
+    background: $body-color;
 }
 
 .clearfix:after {

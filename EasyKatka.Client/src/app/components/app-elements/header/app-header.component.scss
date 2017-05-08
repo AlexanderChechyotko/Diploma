@@ -1,9 +1,23 @@
+@mixin super-header-background {
+    background: #02ab7e;
+    background: -moz-linear-gradient(left, #02ab7e 1%, #0380c1 100%);
+    background: -webkit-linear-gradient(left, #02ab7e 1%,#0380c1 100%);
+    background: linear-gradient(to right, #02ab7e 1%,#0380c1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02ab7e', endColorstr='#0380c1',GradientType=1 );
+}
+
+$green-color: #02ab7e;
+$blue-color: #0380c1;
+$header-link-color: #eaeaea;
+$header-link-hover-color: #fff;
+$header-active-button-color: #026193;
+
 /* Logo */
 .b-logo {
     text-decoration: none;
     height: 100px;
     width: 100px;
-    background: #292929;
+    background: $green-color;
 
     &__image {
         height: 80px;
@@ -14,7 +28,7 @@
     &__title {
         height: 20px;
         line-height: 20px;
-        color: #ecd481;
+        color: #fff;
         font-size: 14px;
         text-align: center;
     }
@@ -47,12 +61,13 @@
 
 /* Super header*/
 .b-super-header {
-    background: #000;
+    @include super-header-background;
     padding: 8px 0;
 
     &__nav {
         float: right;
         list-style: none;
+        padding-right: 20px;
     }
 
     &__item {
@@ -61,25 +76,25 @@
         padding: 0;
 
         &:last-child {
-            margin-left: 40px;
+            margin-left: 60px;
         }
     }
 
     &__link {
         text-decoration: none;
-        color: #999;
+        color: $header-link-color;
         text-decoration: none;
         font-size: 13px;
 
         &:hover {
-            color: #fff;
+            color:$header-link-hover-color;
         }
     }
 }
 
 /* User panel */
 .b-user-panel {
-    background: #3b3b3b;
+    @include super-header-background();
 
     &__nav {
         list-style: none;
@@ -100,26 +115,30 @@
         display: block;
         height: 66px;
         line-height: 66px;
-        color: #e6e6e6;
+        color: $header-link-color;
         text-align: center;
-        border-right: 1px solid #000;
+        border-right: 1px solid #fff;
+        border-top: 1px solid #fff;
 
         &:hover,
         &_active {
-            color: #fff;
-            line-height: 56px;
-            border: 5px solid #222222;
+            color: $header-link-hover-color;
+            line-height: 55px;
+            border: 5px solid #fff!important;
         } 
+    }
+
+    &__item:first-child .b-user-panel__button {
+        border-left: 1px solid #fff;
     }
 
     &__item:last-child .b-user-panel__button {
         color: #000;
         border: none;
+        line-height: 66px;
 
         &:hover {
-            background: #ecd481;
-            line-height: 56px;
-            border: 5px solid #eac031;
+            border: none!important;
         }
     }
 }
