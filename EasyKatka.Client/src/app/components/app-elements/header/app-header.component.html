@@ -16,9 +16,8 @@
                         Login/Register
                     </a>
                     <ng-template #authenticated>  
-                        <a [routerLink]="['/account', '4324']" class="b-super-header__link">
-                            Alexander
-                        </a>
+                        <a [routerLink]="['/account', '4324']" class="b-super-header__link">Alexander</a>
+                        <a (click)="logoutHandler()" class="b-super-header__link b-super-header__logout">Выйти</a>
                     </ng-template>  
                 </li>
             </ul>

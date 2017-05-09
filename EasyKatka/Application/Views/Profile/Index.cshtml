@@ -1,0 +1,36 @@
+﻿@model Application.Models.ProfileViewModel
+@{
+    ViewBag.Title = "Profile";
+}
+
+<div class="profile-container clearfix">
+    <div class="profile-nav">
+        <ul class="profile-nav-list">
+            <li class="profile-nav-item">
+                @Ajax.ActionLink("Редактировать профиль", "EditProfile", "Profile", null, new AjaxOptions { UpdateTargetId = "profile-result" }, new { @class = "profile-nav-link" })
+            </li>
+            <li class="profile-nav-item">
+                @Ajax.ActionLink("Сменить пароль", "ChangePassword", "Profile", null, new AjaxOptions { UpdateTargetId = "profile-result" }, new { @class = "profile-nav-link" })
+            </li>
+            @if (User.IsInRole("admin"))
+            {
+                <li class="profile-nav-item">
+                    @Ajax.ActionLink("Просмотр пользователей", "ManageUsers", "Profile", null, new AjaxOptions { UpdateTargetId = "profile-result" }, new { @class = "profile-nav-link" })
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="profile-content">
+        @Html.ValidationSummary()
+        <div class="profile-name">@User.Identity.Name</div>
+        <div id="profile-result">
+            @Html.Partial("_EditProfilePartial")
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}
+

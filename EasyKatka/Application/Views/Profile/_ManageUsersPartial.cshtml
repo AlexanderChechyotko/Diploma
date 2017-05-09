@@ -1,0 +1,29 @@
+﻿@model Application.Models.ManageUsersViewModel
+
+<div class="user-list-container">
+    <div class="user-list-title clearfix">
+        <div class="col">Email</div>
+        <div class="col">Имя</div>
+        <div class="col">Фамилия</div>
+        <div class="col">Дата рождения</div>
+        <div class="col">Номер телефона</div>
+    </div>
+    @foreach (var item in Model.Users)
+    {
+        using (Html.BeginForm("", "Profile", FormMethod.Post, new { @class = "app- form user-list-form clearfix", role = "form" }))
+        {
+            <div class="col">@item.Email</div>
+            <div class="col">@(item.FirstName ?? "Не задано")</div>
+            <div class="col">@(item.LastName ?? "Не задано")</div>
+            <div class="col">@(item.DateOfBirth == null ? "Не задано" : item.DateOfBirth.ToString())</div>
+            <div class="col">@(item.PhoneNumber ?? "Не задано")</div>
+            <div class="col">
+                @Html.ActionLink("Заблокировать", "LockoutUser", "Profile", new { email = item.Email }, null)
+            </div>
+            <div class="col">
+                @Html.ActionLink("Сбросить пароль", "ResetUserPassword", "Profile", new { email = item.Email }, null)
+            </div>
+        }
+
+    }
+</div>

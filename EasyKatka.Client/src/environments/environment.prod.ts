@@ -6,10 +6,11 @@ export const environment = {
         methods: {
             getLots: 'api/auction/getAuctions',
             getLotInformation: '',
+            addLot: 'api/auction/addLot',
             getAccountInformation: '',
             logIn: 'api/authentication/login',
             logOut: 'api/authentication/logout',
-            register: 'api/authentication/register',
+            register: 'api/Account/Register',
             forgotPassword: 'api/authentication/forgot'
         }
     }

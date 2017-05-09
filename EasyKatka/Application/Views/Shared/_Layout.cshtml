@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css/main/main.css" rel="stylesheet" />
+    <link href="~/Content/css/main/header.css" rel="stylesheet" />
+    <link href="~/Content/css/forms/forms.css" rel="stylesheet" />
+    <link href="~/Content/css/account/account.css" rel="stylesheet" />
+    <link href="~/Content/css/manage/manage.css" rel="stylesheet" />
+    <link href="~/Content/css/manage/userList.css" rel="stylesheet" />
+    <link href="~/Content/css/post/post.css" rel="stylesheet" />
+    <link href="~/Content/css/comments/comments.css" rel="stylesheet" />
+    <link href="~/Content/css/auction/lot-small-description.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/app.js")"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-nav">
+                <ul class="header-nav-list">
+                    <li class="header-nav-item">@Html.ActionLink("Главная", "Index", "Home", null, new { @class = "header-nav-link" })</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li class="header-nav-item">@Html.ActionLink("Добавить аукцион", "CreateAuction", "Auction", null, new { @class = "header-nav-link" })</li>
+                        <li class="header-nav-item">@Html.ActionLink("Завершившиеся аукционы", "EndedAuctions", "Auction", null, new { @class = "header-nav-link" })</li>
+                        <li class="header-nav-item">@Html.ActionLink("Купить биды", "EndedAuctions", "Auction", null, new { @class = "header-nav-link" })</li>
+                        <li class="header-nav-item">@Html.ActionLink("Мои статьи", "Index", "Post", null, new { @class = "header-nav-link" })</li>
+                        <li class="header-nav-item">@Html.ActionLink("Написать статью", "Create", "Post", null, new { @class = "header-nav-link" })</li>
+                    }
+                </ul>
+            </div>
+            <div class="header-account">
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </header>
+
+    <div class="content-container clearfix">
+        @RenderBody()
+    </div>
+    <script type="text/javascript" src="~/Scripts/jquery-3.1.1.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

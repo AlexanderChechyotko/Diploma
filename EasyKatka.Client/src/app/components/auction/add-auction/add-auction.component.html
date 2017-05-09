@@ -1,6 +1,9 @@
 <div class="b-add-lot">
     <form class="b-add-lot__form" (ngSubmit)="onAddLot()">
         <input type="text" name="title" placeholder="TITLE" class="b-add-lot__input b-add-lot_text" [(ngModel)]="lotForm.title" />
+        <input type="file" name="image" class="b-add-lot__input b-add-lot_text" [(ngModel)]="lotForm.image" />
+        <input type="date" name="tradingStart" class="b-add-lot__input b-add-lot_text" [(ngModel)]="lotForm.tradingStart" />
+        <input type="number" name="startPrice" placeholder="НАЧАЛЬНАЯ ЦЕНА" class="b-add-lot__input b-add-lot_text" [(ngModel)]="lotForm.startPrice" />
         <input type="submit" class="b-add-lot__input b-add-lot__input-submit" value="Добавить лот" />
     </form>
 </div>

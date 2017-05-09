@@ -1,0 +1,34 @@
+﻿@model Application.Models.LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+<div class="account-container">
+    <div class="account-title">Login</div>
+    <div class="account-form">
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "app-form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "form-text-danger" })
+        <div class="form-group">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-input", placeholder = "Введите email" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "form-text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-input", placeholder = "Введите пароль" })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "form-text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.RememberMe);
+            @Html.CheckBoxFor(m => m.RememberMe)
+        </div>
+        <div class="form-group">
+            <input type="submit" class="form-submit" value="Войти" />
+        </div>
+        <div class="form-group">
+            @Html.ActionLink("Забыли пароль?", "ForgotPassword", null, new { @class = "form-link" })
+            @*Html.ActionLink("Зарегистрироваться", "Register", new { @class = "form-link" })*@
+        </div>
+    }
+    </div>
+</div>

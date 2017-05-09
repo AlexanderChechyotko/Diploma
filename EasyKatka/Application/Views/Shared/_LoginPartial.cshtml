@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    <ul class="header-account-list">
+        <li class="header-account-item">@Html.ActionLink(User.Identity.Name, "Index", "Profile", null, new { @class = "header-account-link" })</li>
+        <li class="header-account-item">@Html.ActionLink("Выйти", "Logout", "Account", null, new { @class = "header-account-link" })</li>
+    </ul>
+}
+else
+{
+    <ul class="header-account-list">
+        <li class="header-account-item">@Html.ActionLink("Регистрация", "Register", "Account", null, new { @class = "header-account-link" })</li>
+        <li class="header-account-item">@Html.ActionLink("Войти", "Login", "Account", null, new { @class = "header-account-login-button" })</li>
+    </ul>
+}

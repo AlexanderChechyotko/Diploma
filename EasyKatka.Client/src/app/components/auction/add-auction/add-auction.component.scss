@@ -1,0 +1,71 @@
+$green-color: #02ab7e;
+$blue-color: #0380c1;
+
+.b-add-lot {
+    margin: 100px auto;
+    width: 340px;
+
+    &__form {
+        width: 100%;
+    }
+
+    &__input {
+        height: 44px;
+        font-size: 16px;
+        outline: none;
+    }
+
+    &__input_text,
+    &__input_password {
+        background: #f6f6f6;
+        margin-bottom: 40px;
+        padding-top: 12px 0;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #4e5866;
+
+        &:focus {
+            border-color: $blue-color;
+        }
+    }
+
+    &__footer {
+        box-sizing: border-box;
+        height: 44px;
+        line-height: 44px;
+    }
+
+    &__footer-item {
+        width: 50%;
+        float: left;
+    }
+
+    &__input-submit {
+        float: right;
+        width: 115px;
+        border: 2px solid $blue-color;
+        color: $blue-color;
+        background: transparent;
+
+        &:hover{
+            background: $blue-color;
+            color: #fff;
+        }
+    }
+
+    &__remember {
+        text-decoration: none;
+        color: #000;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__loading {
+        height: 44px;
+        float: right;
+        position: relative;
+        right: 30.5px;
+    }
+}

@@ -1,0 +1,13 @@
+﻿@model Application.Models.PostModels.OpenPostViewModel
+<div id="comments">
+    @if (Model.CommentsViewModel != null)
+    {
+        foreach (var comment in Model.CommentsViewModel)
+        {
+            <div class="comment-container">
+                <div class="comment-author">@comment.Author</div>
+                <div class="comment-text">@comment.Text</div>
+            </div>
+        }
+    }
+</div>

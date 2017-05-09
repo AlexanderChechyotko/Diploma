@@ -1,0 +1,50 @@
+﻿@model Application.Models.PostModels.OpenPostViewModel
+<div class="post-container">
+    <div class="post-title">@Model.PostViewModel.Title</div>
+    <div class="post-info clearfix">
+        <div class="post-author">@Model.PostViewModel.Author</div>
+        <div class="post-date">@Model.PostViewModel.AddedOn</div>
+    </div>
+    <div class="post-description">@MvcHtmlString.Create(Model.PostViewModel.Description)</div>
+    <div class="like-container clearfix">
+        @Html.Partial("_LikeCountPartial")
+        <div class="like-put">
+            <a class="put-like" href="@Url.Action("PutLike", new { postId = Model.PostId })">Лайкнуть</a>
+        </div>
+    </div>
+</div>
+<div class="comments-container">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "form-text-danger" })
+    <div class="write-comment">
+        @using (Ajax.BeginForm("AddComment", "Home", new AjaxOptions { UpdateTargetId = "comments" }, new { @class = "write-comment-form app-form" }))
+        {
+            <div class="your-comment">Ваш комментарий</div>
+            <div class="comment-input">
+                <input type="hidden" name="postId" value="@Model.PostId" />
+                @Html.TextAreaFor(m => m.CommentText, new { @class = "comment-input-text" })
+                @Html.ValidationMessageFor(m => m.CommentText, "", new { @class = "form-text-danger" })
+            </div>
+            <div class="comment-send">
+                <input class="form-submit" type="submit" value="Добавить" />
+            </div>
+        }
+    </div>
+    @Html.Partial("_CommentsPartial")
+</div>
+@section scripts
+{
+    <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script>
+        (function (global, undefined) {
+            'use strict';
+            $(document).ready(function () {
+
+                $('.put-like').click(function (e) {
+                    e.preventDefault();
+                    $('#like-count').load('@Url.Action("PutLike", "Post")?postId=' + @Model.PostId)
+                });
+            });
+        })(this);
+    </script>
+}

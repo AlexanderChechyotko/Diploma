@@ -1,0 +1,70 @@
+﻿header {
+    background: #202125;
+    height: 60px;
+    width: 100%;
+}
+
+    header .header-container {
+        width: 980px;
+        margin: 0 auto;
+        line-height: 60px;
+    }
+
+.header-container .header-nav {
+    float:left;
+}
+
+.header-nav .header-nav-list,
+.header-account .header-account-list {
+    list-style: none;
+}
+
+.header-nav-list .header-nav-item,
+.header-account-list .header-account-item {
+    float: left;
+}
+
+.header-nav-list .header-nav-item {
+    margin-left: 20px;
+}
+
+.header-nav-item .header-nav-link,
+.header-account-item .header-account-link {
+    text-decoration: none;
+    color: #e8e8e8;
+}
+
+    .header-nav-item .header-nav-link:hover {
+        color: #fff;
+    }
+
+.header-container .header-account {
+    float: right;
+    margin-right: 30px;
+}
+
+.header-account-list .header-account-item {
+    margin-right: 20px;
+}
+
+.header-account-list .header-account-item:last-child{
+    margin-right: 0;
+}
+
+    .header-account-item .header-account-link:hover {
+        color: #fff;
+    }
+
+.header-account-item .header-account-login-button {
+    text-decoration:none;
+    background: #ec3228;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 2px;
+    color: #fff;
+    padding: 6px 20px;
+}
+
+    .header-account-item .header-account-login-button:hover {
+        background: #ff0d00;
+    }

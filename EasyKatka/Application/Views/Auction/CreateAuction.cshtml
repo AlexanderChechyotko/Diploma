@@ -1,0 +1,39 @@
+﻿@model Application.Models.AuctionModels.AuctionViewModel
+@{
+    ViewBag.Title = "Create Auction";
+}
+
+<div class="account-container">
+    <div class="account-title">Create Auction</div>
+    <div class="account-form">
+        @using (Html.BeginForm("CreateAuction", "Auction", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { enctype = "multipart/form-data", @class = "app-form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "form-text-danger" })
+            <div class="form-group">
+                @Html.Label("LotPhoto", new { @class = "" })
+                <input type="file" id="LotPhoto" name="LotInformation.UploadedImage" />
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.LotInformation.Title, new { @class = "form-input", placeholder = "Введите заголовок" })
+                @Html.ValidationMessageFor(m => m.LotInformation.Title, "", new { @class = "form-text-danger" })
+            </div>
+            <div class="form-group">
+                <input type="date" name="TradingDateStart" value="" />
+                @Html.ValidationMessageFor(m => m.TradingDateStart, "", new { @class = "form-text-danger" })
+            </div>
+            <div class="form-group">
+                <input type="time" name="TradingTimeStart" value="" />
+                @Html.ValidationMessageFor(m => m.TradingTimeStart, "", new { @class = "form-text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.LotInformation.StartPrice, new { @class = "form-input", placeholder = "Введите начальную цену товара" })
+                @Html.ValidationMessageFor(m => m.LotInformation.StartPrice, "", new { @class = "form-text-danger" })
+            </div>
+            <div class="form-group">
+                <input type="submit" class="form-submit" value="Добавить" />
+            </div>
+        }
+    </div>
+</div>
+

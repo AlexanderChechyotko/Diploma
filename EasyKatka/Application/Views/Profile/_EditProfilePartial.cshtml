@@ -1,0 +1,25 @@
+﻿@model Application.Models.ProfileViewModel
+@using (Html.BeginForm("EditProfile", "Profile", FormMethod.Post, new { @class = "app-form", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-input", placeholder = "Имя" })
+        @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "form-text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.LastName, new { @class = "form-input", placeholder = "Фамилия" })
+        @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "form-text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-input", placeholder = "Дата рождения" })
+        @Html.ValidationMessageFor(m => m.DateOfBirth, "", new { @class = "form-text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-input", placeholder = "Номер телефона" })
+        @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "form-text-danger" })
+    </div>
+    <div class="form-group">
+            <input type="submit" value="Сохранить" class="form-submit" />
+    </div>
+}

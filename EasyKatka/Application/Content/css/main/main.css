@@ -1,0 +1,19 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+
+.content-container {
+    width: 980px;
+    margin: 0 auto;
+}
+
+body {
+    background: #f3f8fd;
+}
+
+.clearfix::after {
+    display:block;
+    content: "";
+    clear: both;
+}
