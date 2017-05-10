@@ -3,11 +3,30 @@
     ViewBag.Title = "Auction";
 }
 
-<div class="b-auction-information">
-    <div class="b-auction-information__image">
+<div class="b-auction">
+    <div class="b-auction__block b-auction-information">
+        <div class="b-auction-information__image">
 
+        </div>
+        <div class="b-auction-information__title">@Model.Title</div>
+        <div class="b-auction-information__start-time">@Model.TradingStart</div>
     </div>
-    <div class="b-auction-information__title">@Model.Title</div>
-    <div class="b-auction-information__time">@Model.TradingStart</div>
+    <div class="b-auction__block b-auction-interface">
+        <div id="auction-timer" class="b-auction-interface__timer">00:05</div>
+        <div id="auction-button" class="b-auction-interface__button">Сделать ставку</div>
+        <div id="auction-last-rate" class="b-auction-interface__last-rate">Igor</div>
+    </div>
+    <div class="b-auction__block b-user-rates">
+        <ul class="b-user-rates__list">
+            <li class="b-user-rates__item">Alexander</li>
+            <li class="b-user-rates__item">Egor Pidor</li>
+            <li class="b-user-rates__item">Alexander</li>
+            <li class="b-user-rates__item">Egor Pidor</li>
+            <li class="b-user-rates__item">Alexander</li>
+            <li class="b-user-rates__item">Egor Pidor</li>
+            <li class="b-user-rates__item">Alexander</li>
+            <li class="b-user-rates__item">Egor Pidor</li>
+        </ul>
+    </div>
 </div>
 

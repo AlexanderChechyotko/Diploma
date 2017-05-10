@@ -13,6 +13,7 @@
     <link href="~/Content/css/post/post.css" rel="stylesheet" />
     <link href="~/Content/css/comments/comments.css" rel="stylesheet" />
     <link href="~/Content/css/auction/lot-small-description.css" rel="stylesheet" />
+    <link href="~/Content/css/auction/auction.css" rel="stylesheet" />
     <script type="text/javascript" src="~/Scripts/ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/app.js")"></script>
 </head>
@@ -27,8 +28,6 @@
                         <li class="header-nav-item">@Html.ActionLink("Добавить аукцион", "CreateAuction", "Auction", null, new { @class = "header-nav-link" })</li>
                         <li class="header-nav-item">@Html.ActionLink("Завершившиеся аукционы", "EndedAuctions", "Auction", null, new { @class = "header-nav-link" })</li>
                         <li class="header-nav-item">@Html.ActionLink("Купить биды", "EndedAuctions", "Auction", null, new { @class = "header-nav-link" })</li>
-                        <li class="header-nav-item">@Html.ActionLink("Мои статьи", "Index", "Post", null, new { @class = "header-nav-link" })</li>
-                        <li class="header-nav-item">@Html.ActionLink("Написать статью", "Create", "Post", null, new { @class = "header-nav-link" })</li>
                     }
                 </ul>
             </div>

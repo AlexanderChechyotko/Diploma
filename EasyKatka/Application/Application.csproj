@@ -189,6 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\account\account.css" />
+    <Content Include="Content\css\auction\auction.css" />
     <Content Include="Content\css\comments\comments.css" />
     <Content Include="Content\css\forms\forms.css" />
     <Content Include="Content\css\main\header.css" />
@@ -465,6 +466,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuctionController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BidsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
@@ -534,6 +536,7 @@
     <Folder Include="Content\fonts\" />
     <Folder Include="Content\images\lots\" />
     <Folder Include="Content\js\" />
+    <Folder Include="Views\Bids\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">

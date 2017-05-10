@@ -40,7 +40,8 @@ namespace BLL.Servises
                     FirstName = userDTO.FirstName,
                     LastName = userDTO.LastName,
                     DateOfBirth = userDTO.DateOfBirth,
-                    PhoneNumber = userDTO.PhoneNumber
+                    PhoneNumber = userDTO.PhoneNumber,
+                    Bids = userDTO.Bids
                 };
                 var result = await _userManager.CreateAsync(user, userDTO.Password);
                 if (!result.Succeeded)

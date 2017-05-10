@@ -87,15 +87,6 @@
   <ItemGroup>
     <Compile Include="ApplicatinContext\ApplicationContext.cs" />
     <Compile Include="ApplicatinContext\ApplicationInitializer.cs" />
-    <Compile Include="Migrations\201705091552043_InitialCreate.cs" />
-    <Compile Include="Migrations\201705091552043_InitialCreate.Designer.cs">
-      <DependentUpon>201705091552043_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705091601572_MigrateDB.cs" />
-    <Compile Include="Migrations\201705091601572_MigrateDB.Designer.cs">
-      <DependentUpon>201705091601572_MigrateDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
@@ -109,14 +100,6 @@
       <Project>{36448C0F-555B-4742-A5FD-49688D50EFE7}</Project>
       <Name>Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705091552043_InitialCreate.resx">
-      <DependentUpon>201705091552043_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705091601572_MigrateDB.resx">
-      <DependentUpon>201705091601572_MigrateDB.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

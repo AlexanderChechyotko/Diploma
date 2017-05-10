@@ -81,6 +81,7 @@ namespace Application.Controllers
                     LastName = model.LastName,
                     DateOfBirth = model.DateOfBirth,
                     PhoneNumber = model.PhoneNumber,
+                    Bids = 0,
                     Role = "user"
                 };
                 OperationDetails operationDetails = await _userService.Register(userDto);
