@@ -250,6 +250,8 @@
     <Content Include="Content\scss\Bundled.min.css">
       <DependentUpon>Bundled.css</DependentUpon>
     </Content>
+    <Content Include="Content\scss\buttons\nav-button.scss" />
+    <Content Include="Content\scss\buttons\action-button.scss" />
     <None Include="Content\scss\comments\comments.scss" />
     <None Include="Content\scss\forms\forms.scss" />
     <None Include="Content\scss\main\header.scss" />

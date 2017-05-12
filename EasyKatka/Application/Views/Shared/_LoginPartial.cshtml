@@ -2,14 +2,34 @@
 @if (Request.IsAuthenticated)
 {
     <ul class="b-header-account__list">
-        <li class="b-header-account__item">@Html.ActionLink(User.Identity.Name, "Index", "Profile", null, new { @class = "b-header-account__link" })</li>
-        <li class="b-header-account__item">@Html.ActionLink("Выйти", "Logout", "Account", null, new { @class = "b-header-account__link" })</li>
+        <li class="b-header-account__item">
+            <a class="b-header-account__link b-nav-button" href="@Url.Action("Index", "Profile")">
+                <div class="b-nav-button__text">@User.Identity.Name</div>
+                <div class="b-nav-button__line"></div>
+            </a>
+        </li>
+        <li class="b-header-account__item">
+            <a class="b-header-account__link b-nav-button" href="@Url.Action("Logout", "Account")">
+                <div class="b-nav-button__text">Выйти</div>
+                <div class="b-nav-button__line"></div>
+            </a>
+        </li>
     </ul>
 }
 else
 {
     <ul class="b-header-account__list">
-        <li class="b-header-account__item">@Html.ActionLink("Регистрация", "Register", "Account", null, new { @class = "b-header-account__link" })</li>
-        <li class="b-header-account__item">@Html.ActionLink("Войти", "Login", "Account", null, new { @class = "b-header-account__button" })</li>
+        <li class="b-header-account__item">
+            <a class="b-header-account__link b-nav-button" href="@Url.Action("Register", "Account")">
+                <div class="b-nav-button__text">Регистрация</div>
+                <div class="b-nav-button__line"></div>
+            </a>
+        </li>
+        <li class="b-header-account__item">
+            <a class="b-header-account__link b-nav-button" href="@Url.Action("Login", "Account")">
+                <div class="b-nav-button__text">Войти</div>
+                <div class="b-nav-button__line"></div>
+            </a>
+        </li>
     </ul>
 }

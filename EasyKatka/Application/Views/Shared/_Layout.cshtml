@@ -8,25 +8,25 @@
 </head>
 <body>
     <div class="b-header">
-        <div class="b-super-header">
-            <div class="b-super-header__nav">
-                <ul class="b-super-header__list">
+        <div class="b-super-header clearfix">
+            <div class="b-super-header__nav clearfix">
+                <ul class="b-super-header__list clearfix">
                     <li class="b-super-header__item">
-                        <a class="b-super-header__link" href="@Url.Action("Index", "Home")">
-                            <div class="b-super-header__link-text">Главная</div>
-                            <div class="b-super-header__link-line"></div>
+                        <a class="b-super-header__link b-nav-button" href="@Url.Action("Index", "Home")">
+                            <div class="b-nav-button__text">Главная</div>
+                            <div class="b-nav-button__line"></div>
                         </a>
                     </li>
                     <li class="b-super-header__item">
-                        <a class="b-super-header__link" href="@Url.Action("Index", "About")">
-                            <div class="b-super-header__link-text">Об аукционе</div>
-                            <div class="b-super-header__link-line"></div>
+                        <a class="b-super-header__link b-nav-button" href="@Url.Action("Index", "About")">
+                            <div class="b-nav-button__text">Об аукционе</div>
+                            <div class="b-nav-button__line"></div>
                         </a>
                     </li>
                     <li class="b-super-header__item">
-                        <a class="b-super-header__link" href="@Url.Action("Contacts", "Home")">
-                            <div class="b-super-header__link-text">Контакты</div>
-                            <div class="b-super-header__link-line"></div>
+                        <a class="b-super-header__link b-nav-button" href="@Url.Action("Contacts", "Home")">
+                            <div class="b-nav-button__text">Контакты</div>
+                            <div class="b-nav-button__line"></div>
                         </a>
                     </li>
                 </ul>
@@ -39,10 +39,10 @@
         {
             <div class="b-user-panel">
                 <ul class="b-user-panel__nav clearfix">
-                    <li class="b-user-panel__item">@Html.ActionLink("Аукционы", "Index", "Home", null, new { @class = "header-nav-link" })</li>
-                    <li class="b-user-panel__item">@Html.ActionLink("Добавить аукцион", "CreateAuction", "Auction", null, new { @class = "header-nav-link" })</li>
-                    <li class="b-user-panel__item">@Html.ActionLink("Завершившиеся аукционы", "EndedAuctions", "Auction", null, new { @class = "header-nav-link" })</li>
-                    <li class="b-user-panel__item">@Html.ActionLink("Купить биды", "EndedAuctions", "Auction", null, new { @class = "header-nav-link" })</li>
+                    <li class="b-user-panel__item">@Html.ActionLink("Аукционы", "Index", "Home", null, new { @class = "b-user-panel__button" })</li>
+                    <li class="b-user-panel__item">@Html.ActionLink("Добавить аукцион", "CreateAuction", "Auction", null, new { @class = "b-user-panel__button" })</li>
+                    <li class="b-user-panel__item">@Html.ActionLink("Завершившиеся аукционы", "EndedAuctions", "Auction", null, new { @class = "b-user-panel__button" })</li>
+                    <li class="b-user-panel__item">@Html.ActionLink("Купить биды", "EndedAuctions", "Auction", null, new { @class = "b-user-panel__button" })</li>
                     <li class="b-user-panel__item"><span class="b-user-panel__button">Bid Count: 34</span></li>
                 </ul>
             </div>

@@ -1,15 +1,18 @@
-﻿.account-container {
-    margin-top: 60px;
-}
+﻿@import "../_colors.scss";
 
-.account-container .account-title {
-    color: #202125;
-    border-bottom: 1px solid #dedede;
-    font-size: 24px;
-    font-weight: bold;
-    padding-bottom: 10px;
+.account-container {
+    margin: 50px auto;
+    width: 350px;
+
+    .account-title {
+        color: $text-color;
+        font-size: 28px;
+        font-weight: 400;
+        margin-bottom: 50px;
+    }
+
 }
 
 .account-form {
-    width: 300px;
+    width: 100%;
 }

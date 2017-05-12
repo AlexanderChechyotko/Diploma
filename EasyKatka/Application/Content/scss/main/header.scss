@@ -6,8 +6,11 @@
 }
 
 .b-super-header {
-    &__nav {
+    padding: 8px 30px;
 
+    &__nav {
+        text-align: center;
+        display:inline-block;
     }
 
     &__list {
@@ -16,11 +19,78 @@
 
     &__item {
         float: left;
+        margin-right: 20px;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 
     &__link {
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
+
+.b-header-account {
+    float:right;
+
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        float: left;
+        margin-right: 20px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__link {
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
+
+.b-user-panel {
+
+    &__nav {
+        list-style: none;
+        height: 65px;
+    }
+
+    &__item {
+        float: left;
+        width: 20%;
+
+        &:last-child {
+            background: #ecd481;
+        }
+    }
+
+    &__button {
+        box-sizing: border-box;
         text-decoration: none;
+        display: block;
+        height: 64px;
+        line-height: 64px;
         color: #fff;
-        border
+        text-align: center;
+        border-right: 1px solid #fff;
+        border-top: 1px solid #fff;
+
+        &:hover,
+        &_active {
+            color: $button-color;
+            background: #fff;
+        } 
+    }
+
+    &__item:last-child .b-user-panel__button {
+        color: #000;
+        border: none;
     }
 }

@@ -1,4 +1,6 @@
-﻿.app-form .form-link {
+﻿@import "../_colors.scss";
+
+.app-form .form-link {
     text-decoration: none;
     color: #202125;
 }
@@ -12,23 +14,15 @@
 }
 
 .app-form .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .app-form .form-submit {
     margin-top: 10px;
-    background: #ec3228;
-    border-radius: 2px;
-    color: #fff;
     padding: 10px 30px;
     border: none;
     outline: none;
-    font-size: 20px;
     cursor: pointer;
-}
-
-.app-form .form-submit:hover {
-    background: #ff0d00;
 }
 
 .app-form .form-input {
@@ -39,6 +33,7 @@
     border: none;
     border-bottom: 1px solid #202125;
     outline: none;
+    background: $body-color;
 }
 
     .app-form .form-input:focus {

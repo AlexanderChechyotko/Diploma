@@ -19,15 +19,14 @@
             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "form-text-danger" })
         </div>
         <div class="form-group">
-            @Html.LabelFor(m => m.RememberMe);
+            @Html.LabelFor(m => m.RememberMe)
             @Html.CheckBoxFor(m => m.RememberMe)
         </div>
         <div class="form-group">
-            <input type="submit" class="form-submit" value="Войти" />
+            <input type="submit" class="form-submit b-action-button" value="Войти" />
         </div>
         <div class="form-group">
             @Html.ActionLink("Забыли пароль?", "ForgotPassword", null, new { @class = "form-link" })
-            @*Html.ActionLink("Зарегистрироваться", "Register", new { @class = "form-link" })*@
         </div>
     }
     </div>

@@ -4,14 +4,14 @@
 }
 
 <div class="account-container">
-    <div class="account-title">Create Auction</div>
+    <div class="account-title">Создание аукциона</div>
     <div class="account-form">
         @using (Html.BeginForm("CreateAuction", "Auction", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { enctype = "multipart/form-data", @class = "app-form" }))
         {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true, "", new { @class = "form-text-danger" })
             <div class="form-group">
-                @Html.Label("LotPhoto", new { @class = "" })
+                @Html.Label("LotPhoto", "Фотография лота")
                 <input type="file" id="LotPhoto" name="LotInformation.UploadedImage" />
             </div>
             <div class="form-group">
@@ -19,10 +19,12 @@
                 @Html.ValidationMessageFor(m => m.LotInformation.Title, "", new { @class = "form-text-danger" })
             </div>
             <div class="form-group">
+                @Html.LabelFor(x => x.TradingDateStart, "Дата проведения аукциона")<br>
                 <input type="date" name="TradingDateStart" value="" />
                 @Html.ValidationMessageFor(m => m.TradingDateStart, "", new { @class = "form-text-danger" })
             </div>
             <div class="form-group">
+                @Html.LabelFor(x=> x.TradingDateStart, "Время проведения аукциона")<br>
                 <input type="time" name="TradingTimeStart" value="" />
                 @Html.ValidationMessageFor(m => m.TradingTimeStart, "", new { @class = "form-text-danger" })
             </div>
@@ -31,7 +33,7 @@
                 @Html.ValidationMessageFor(m => m.LotInformation.StartPrice, "", new { @class = "form-text-danger" })
             </div>
             <div class="form-group">
-                <input type="submit" class="form-submit" value="Добавить" />
+                <input type="submit" class="form-submit b-action-button" value="Добавить" />
             </div>
         }
     </div>

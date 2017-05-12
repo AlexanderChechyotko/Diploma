@@ -1,0 +1,36 @@
+﻿@-moz-keyframes animate-nav-button {
+    from { width: 1%; }
+    to { width: 100%; }
+}
+
+@-webkit-keyframes animate-nav-button {
+    from { width: 1%; }
+    to { width: 100%; }
+}
+
+@keyframes animate-nav-button {
+    from { width: 1%; }
+    to { width: 100%; }
+}
+
+.b-nav-button {
+    text-decoration: none;
+    color: #fff;
+
+    &__text {
+        padding: 5px 0;
+        text-transform: uppercase;
+    }
+
+    &__line {
+        background: #fff;
+        height: 1px;
+    }
+
+    &:hover &__line {
+        -moz-animation: animate-nav-button .8s;
+        -o-animation: animate-nav-button .8s;
+        -webkit-animation: animate-nav-button .8s;
+        animation: animate-nav-button .8s;
+    }
+}

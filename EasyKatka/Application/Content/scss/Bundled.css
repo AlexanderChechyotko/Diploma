@@ -97,12 +97,62 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd5a93', endColorstr='#6252fd',GradientType=1 );
   width: 100%; }
 
-.b-super-header__list {
-  list-style: none; }
+.b-super-header {
+  padding: 8px 30px; }
+  .b-super-header__nav {
+    text-align: center;
+    display: inline-block; }
+  .b-super-header__list {
+    list-style: none; }
+  .b-super-header__item {
+    float: left;
+    margin-right: 20px; }
+    .b-super-header__item:last-child {
+      margin-right: 0; }
+  .b-super-header__link {
+    font-size: 12px;
+    font-weight: 500; }
 
-.b-super-header__link {
+.b-header-account {
+  float: right; }
+  .b-header-account__list {
+    list-style: none; }
+  .b-header-account__item {
+    float: left;
+    margin-right: 20px; }
+    .b-header-account__item:last-child {
+      margin-right: 0; }
+  .b-header-account__link {
+    font-size: 12px;
+    font-weight: 500; }
+
+.b-user-panel__nav {
+  list-style: none;
+  height: 65px; }
+
+.b-user-panel__item {
+  float: left;
+  width: 20%; }
+  .b-user-panel__item:last-child {
+    background: #ecd481; }
+
+.b-user-panel__button {
+  box-sizing: border-box;
   text-decoration: none;
-  color: #fff; }
+  display: block;
+  height: 64px;
+  line-height: 64px;
+  color: #fff;
+  text-align: center;
+  border-right: 1px solid #fff;
+  border-top: 1px solid #fff; }
+  .b-user-panel__button:hover, .b-user-panel__button_active {
+    color: #f36;
+    background: #fff; }
+
+.b-user-panel__item:last-child .b-user-panel__button {
+  color: #000;
+  border: none; }
 
 .app-form .form-link {
   text-decoration: none;
@@ -115,21 +165,14 @@ body {
   margin-top: 15px; }
 
 .app-form .form-group {
-  margin-bottom: 20px; }
+  margin-bottom: 30px; }
 
 .app-form .form-submit {
   margin-top: 10px;
-  background: #ec3228;
-  border-radius: 2px;
-  color: #fff;
   padding: 10px 30px;
   border: none;
   outline: none;
-  font-size: 20px;
   cursor: pointer; }
-
-.app-form .form-submit:hover {
-  background: #ff0d00; }
 
 .app-form .form-input {
   width: 100%;
@@ -138,7 +181,8 @@ body {
   border-radius: 2px;
   border: none;
   border-bottom: 1px solid #202125;
-  outline: none; }
+  outline: none;
+  background: #f8f8f9; }
 
 .app-form .form-input:focus {
   border-bottom: 1px solid #7397a3; }
@@ -159,17 +203,16 @@ body {
   width: 70%; }
 
 .account-container {
-  margin-top: 60px; }
-
-.account-container .account-title {
-  color: #202125;
-  border-bottom: 1px solid #dedede;
-  font-size: 24px;
-  font-weight: bold;
-  padding-bottom: 10px; }
+  margin: 50px auto;
+  width: 350px; }
+  .account-container .account-title {
+    color: #434C5F;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 50px; }
 
 .account-form {
-  width: 300px; }
+  width: 100%; }
 
 .b-auction {
   display: flex;
@@ -226,6 +269,9 @@ body {
   background: #30a155;
   color: #fff; }
 
+.b-auction-information__image img {
+  width: 100%; }
+
 .b-lots-container {
   margin: 0 auto;
   padding: 40px;
@@ -253,16 +299,8 @@ body {
     width: 140px;
     height: 40px;
     line-height: 40px;
-    transition: all 350ms ease;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: #f36;
-    border: 1px solid #f36;
-    border-radius: 100px;
-    font-size: 11px;
-    font-weight: 500;
     margin: 15px auto 0; }
-  .b-lot:nth-child(3n) {
+  .b-lot:nth-child(3n), .b-lot:last-child {
     margin-right: 0; }
   .b-lot__details {
     padding: 13%;
@@ -283,4 +321,51 @@ body {
   .b-lot__last-user {
     padding: 5px 0;
     color: #6f6f6f; }
+
+@-moz-keyframes animate-nav-button {
+  from {
+    width: 1%; }
+  to {
+    width: 100%; } }
+
+@-webkit-keyframes animate-nav-button {
+  from {
+    width: 1%; }
+  to {
+    width: 100%; } }
+
+@keyframes animate-nav-button {
+  from {
+    width: 1%; }
+  to {
+    width: 100%; } }
+
+.b-nav-button {
+  text-decoration: none;
+  color: #fff; }
+  .b-nav-button__text {
+    padding: 5px 0;
+    text-transform: uppercase; }
+  .b-nav-button__line {
+    background: #fff;
+    height: 1px; }
+  .b-nav-button:hover .b-nav-button__line {
+    -moz-animation: animate-nav-button .8s;
+    -o-animation: animate-nav-button .8s;
+    -webkit-animation: animate-nav-button .8s;
+    animation: animate-nav-button .8s; }
+
+.b-action-button {
+  transition: all 350ms ease;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #f36;
+  border: 1px solid #f36;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 500; }
+  .b-action-button:hover {
+    background: #f36;
+    color: #fff;
+    box-shadow: #c4c4c4 1px 7px 20px 0px; }
 
