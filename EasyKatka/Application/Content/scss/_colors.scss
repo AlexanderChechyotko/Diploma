@@ -1,0 +1,10 @@
+﻿$body-color: #f8f8f9;
+$button-color: #f36;
+
+@mixin main-gradient {
+    background: #fd5a93;
+    background: -moz-linear-gradient(-45deg,  #fd5a93 0%, #6252fd 99%);
+    background: -webkit-linear-gradient(-45deg,  #fd5a93 0%,#6252fd 99%);
+    background: linear-gradient(135deg,  #fd5a93 0%,#6252fd 99%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd5a93', endColorstr='#6252fd',GradientType=1 );
+}

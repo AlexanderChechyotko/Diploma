@@ -20,5 +20,7 @@ namespace DAL.ApplicatinContext
         public DbSet<Tag> Tags { get; set; }
 
         public DbSet<Auction> Auctions { get; set; }
+
+		public DbSet<EndedAuction> EndedAuctions { get; set; }
     }
 }

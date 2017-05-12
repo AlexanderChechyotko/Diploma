@@ -10,7 +10,7 @@ namespace Application.Models.AuctionModels
     {
         public int Id { get; set; }
 
-        public string ImagePath { get; set; }
+        public string UserName { get; set; }
 
         public string Title { get; set; }
 
@@ -23,19 +23,19 @@ namespace Application.Models.AuctionModels
             return auctions.Select(x => new AuctionDescriptionViewModel
             {
                 Id = x.Id,
-                ImagePath = x.ImagePath,
+                UserName = null,
                 Title = x.Title,
                 TradingStart = x.TradingStart,
                 StartPrice = x.StartPrice
             }).ToList();
         }
 
-        public static AuctionDescriptionViewModel BindModel(Auction auction)
+        public static AuctionDescriptionViewModel BindModel(Auction auction, string userName)
         {
             return new AuctionDescriptionViewModel
             {
                 Id = auction.Id,
-                ImagePath = auction.ImagePath,
+                UserName = userName,
                 Title = auction.Title,
                 TradingStart = auction.TradingStart,
                 StartPrice = auction.StartPrice

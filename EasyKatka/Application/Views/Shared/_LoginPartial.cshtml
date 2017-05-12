@@ -1,15 +1,15 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-    <ul class="header-account-list">
-        <li class="header-account-item">@Html.ActionLink(User.Identity.Name, "Index", "Profile", null, new { @class = "header-account-link" })</li>
-        <li class="header-account-item">@Html.ActionLink("Выйти", "Logout", "Account", null, new { @class = "header-account-link" })</li>
+    <ul class="b-header-account__list">
+        <li class="b-header-account__item">@Html.ActionLink(User.Identity.Name, "Index", "Profile", null, new { @class = "b-header-account__link" })</li>
+        <li class="b-header-account__item">@Html.ActionLink("Выйти", "Logout", "Account", null, new { @class = "b-header-account__link" })</li>
     </ul>
 }
 else
 {
-    <ul class="header-account-list">
-        <li class="header-account-item">@Html.ActionLink("Регистрация", "Register", "Account", null, new { @class = "header-account-link" })</li>
-        <li class="header-account-item">@Html.ActionLink("Войти", "Login", "Account", null, new { @class = "header-account-login-button" })</li>
+    <ul class="b-header-account__list">
+        <li class="b-header-account__item">@Html.ActionLink("Регистрация", "Register", "Account", null, new { @class = "b-header-account__link" })</li>
+        <li class="b-header-account__item">@Html.ActionLink("Войти", "Login", "Account", null, new { @class = "b-header-account__button" })</li>
     </ul>
 }

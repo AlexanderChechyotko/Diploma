@@ -4,43 +4,55 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    <link href="~/Content/css/main/main.css" rel="stylesheet" />
-    <link href="~/Content/css/main/header.css" rel="stylesheet" />
-    <link href="~/Content/css/forms/forms.css" rel="stylesheet" />
-    <link href="~/Content/css/account/account.css" rel="stylesheet" />
-    <link href="~/Content/css/manage/manage.css" rel="stylesheet" />
-    <link href="~/Content/css/manage/userList.css" rel="stylesheet" />
-    <link href="~/Content/css/post/post.css" rel="stylesheet" />
-    <link href="~/Content/css/comments/comments.css" rel="stylesheet" />
-    <link href="~/Content/css/auction/lot-small-description.css" rel="stylesheet" />
-    <link href="~/Content/css/auction/auction.css" rel="stylesheet" />
-    <script type="text/javascript" src="~/Scripts/ckeditor/ckeditor.js"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/app.js")"></script>
+    @Styles.Render("~/Content/css")
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <div class="header-nav">
-                <ul class="header-nav-list">
-                    <li class="header-nav-item">@Html.ActionLink("Главная", "Index", "Home", null, new { @class = "header-nav-link" })</li>
-                    @if (Request.IsAuthenticated)
-                    {
-                        <li class="header-nav-item">@Html.ActionLink("Добавить аукцион", "CreateAuction", "Auction", null, new { @class = "header-nav-link" })</li>
-                        <li class="header-nav-item">@Html.ActionLink("Завершившиеся аукционы", "EndedAuctions", "Auction", null, new { @class = "header-nav-link" })</li>
-                        <li class="header-nav-item">@Html.ActionLink("Купить биды", "EndedAuctions", "Auction", null, new { @class = "header-nav-link" })</li>
-                    }
+    <div class="b-header">
+        <div class="b-super-header">
+            <div class="b-super-header__nav">
+                <ul class="b-super-header__list">
+                    <li class="b-super-header__item">
+                        <a class="b-super-header__link" href="@Url.Action("Index", "Home")">
+                            <div class="b-super-header__link-text">Главная</div>
+                            <div class="b-super-header__link-line"></div>
+                        </a>
+                    </li>
+                    <li class="b-super-header__item">
+                        <a class="b-super-header__link" href="@Url.Action("Index", "About")">
+                            <div class="b-super-header__link-text">Об аукционе</div>
+                            <div class="b-super-header__link-line"></div>
+                        </a>
+                    </li>
+                    <li class="b-super-header__item">
+                        <a class="b-super-header__link" href="@Url.Action("Contacts", "Home")">
+                            <div class="b-super-header__link-text">Контакты</div>
+                            <div class="b-super-header__link-line"></div>
+                        </a>
+                    </li>
                 </ul>
             </div>
-            <div class="header-account">
+            <div class="b-header-account">
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-    </header>
+        @if (Request.IsAuthenticated)
+        {
+            <div class="b-user-panel">
+                <ul class="b-user-panel__nav clearfix">
+                    <li class="b-user-panel__item">@Html.ActionLink("Аукционы", "Index", "Home", null, new { @class = "header-nav-link" })</li>
+                    <li class="b-user-panel__item">@Html.ActionLink("Добавить аукцион", "CreateAuction", "Auction", null, new { @class = "header-nav-link" })</li>
+                    <li class="b-user-panel__item">@Html.ActionLink("Завершившиеся аукционы", "EndedAuctions", "Auction", null, new { @class = "header-nav-link" })</li>
+                    <li class="b-user-panel__item">@Html.ActionLink("Купить биды", "EndedAuctions", "Auction", null, new { @class = "header-nav-link" })</li>
+                    <li class="b-user-panel__item"><span class="b-user-panel__button">Bid Count: 34</span></li>
+                </ul>
+            </div>
+        }
+        </div>
 
-    <div class="content-container clearfix">
-        @RenderBody()
-    </div>
-    <script type="text/javascript" src="~/Scripts/jquery-3.1.1.min.js"></script>
-    @RenderSection("scripts", required: false)
-</body>
+        <div class="content-container clearfix">
+            @RenderBody()
+        </div>
+        <script type="text/javascript" src="~/Scripts/jquery-3.1.1.min.js"></script>
+        @RenderSection("scripts", required: false)
+    </body>
 </html>

@@ -18,6 +18,8 @@ namespace Domain.Entities
 
         public string Description { get; set; }
 
+        public LotPhoto LotPhoto { get; set; }
+
         public double StartPrice { get; set; }
 
         public DateTime TradingStart { get; set; }

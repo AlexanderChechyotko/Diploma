@@ -62,6 +62,8 @@
     <Compile Include="Entities\Auction.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Comment.cs" />
+    <Compile Include="Entities\EndedAuction.cs" />
+    <Compile Include="Entities\LotPhoto.cs" />
     <Compile Include="Entities\Post.cs" />
     <Compile Include="Entities\Tag.cs" />
     <Compile Include="Interfaces\IGenericRepository.cs" />

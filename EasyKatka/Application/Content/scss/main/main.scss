@@ -1,0 +1,24 @@
+﻿@import "../_colors.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.content-container {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+body {
+    background: $body-color;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-style: normal;
+}
+
+.clearfix::after {
+    display:block;
+    content: "";
+    clear: both;
+}

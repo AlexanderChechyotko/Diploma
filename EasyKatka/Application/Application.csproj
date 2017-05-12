@@ -92,6 +92,14 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -197,6 +205,58 @@
     <Content Include="Content\css\manage\manage.css" />
     <Content Include="Content\css\manage\userList.css" />
     <Content Include="Content\css\post\post.css" />
+    <Content Include="Content\fonts\Roboto\Roboto.ttf" />
+    <Content Include="Content\fonts\Roboto\Roboto.woff" />
+    <Content Include="Content\fonts\Roboto\Roboto.woff2" />
+    <Content Include="Content\fonts\Roboto\Robotoblack.ttf" />
+    <Content Include="Content\fonts\Roboto\Robotoblack.woff" />
+    <Content Include="Content\fonts\Roboto\Robotoblack.woff2" />
+    <Content Include="Content\fonts\Roboto\Robotoblackitalic.ttf" />
+    <Content Include="Content\fonts\Roboto\Robotoblackitalic.woff" />
+    <Content Include="Content\fonts\Roboto\Robotoblackitalic.woff2" />
+    <Content Include="Content\fonts\Roboto\Robotobold.ttf" />
+    <Content Include="Content\fonts\Roboto\Robotobold.woff" />
+    <Content Include="Content\fonts\Roboto\Robotobold.woff2" />
+    <Content Include="Content\fonts\Roboto\Robotobolditalic.ttf" />
+    <Content Include="Content\fonts\Roboto\Robotobolditalic.woff" />
+    <Content Include="Content\fonts\Roboto\Robotobolditalic.woff2" />
+    <Content Include="Content\fonts\Roboto\Robotoitalic.ttf" />
+    <Content Include="Content\fonts\Roboto\Robotoitalic.woff" />
+    <Content Include="Content\fonts\Roboto\Robotoitalic.woff2" />
+    <Content Include="Content\fonts\Roboto\Robotolight.ttf" />
+    <Content Include="Content\fonts\Roboto\Robotolight.woff" />
+    <Content Include="Content\fonts\Roboto\Robotolight.woff2" />
+    <Content Include="Content\fonts\Roboto\Robotolightitalic.ttf" />
+    <Content Include="Content\fonts\Roboto\Robotolightitalic.woff" />
+    <Content Include="Content\fonts\Roboto\Robotolightitalic.woff2" />
+    <Content Include="Content\fonts\Roboto\Robotomedium.ttf" />
+    <Content Include="Content\fonts\Roboto\Robotomedium.woff" />
+    <Content Include="Content\fonts\Roboto\Robotomedium.woff2" />
+    <Content Include="Content\fonts\Roboto\Robotomediumitalic.ttf" />
+    <Content Include="Content\fonts\Roboto\Robotomediumitalic.woff" />
+    <Content Include="Content\fonts\Roboto\Robotomediumitalic.woff2" />
+    <Content Include="Content\fonts\Roboto\Robotothin.ttf" />
+    <Content Include="Content\fonts\Roboto\Robotothin.woff" />
+    <Content Include="Content\fonts\Roboto\Robotothin.woff2" />
+    <Content Include="Content\fonts\Roboto\Robotothinitalic.ttf" />
+    <Content Include="Content\fonts\Roboto\Robotothinitalic.woff" />
+    <Content Include="Content\fonts\Roboto\Robotothinitalic.woff2" />
+    <None Include="Content\scss\account\account.scss" />
+    <None Include="Content\scss\auction\auction.scss" />
+    <None Include="Content\scss\auction\lot-small-description.scss" />
+    <Content Include="Content\scss\Bundled.css">
+      <DependentUpon>Bundled.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\scss\Bundled.min.css">
+      <DependentUpon>Bundled.css</DependentUpon>
+    </Content>
+    <None Include="Content\scss\comments\comments.scss" />
+    <None Include="Content\scss\forms\forms.scss" />
+    <None Include="Content\scss\main\header.scss" />
+    <None Include="Content\scss\main\main.scss" />
+    <None Include="Content\scss\manage\manage.scss" />
+    <None Include="Content\scss\manage\userList.scss" />
+    <None Include="Content\scss\post\post.scss" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -449,11 +509,20 @@
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Content\css\auction\lot-small-description.css" />
     <Content Include="Scripts\ckeditor\styles.js" />
+    <Content Include="Content\scss\Bundled.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Content\scss\_colors.scss" />
+    <Content Include="Content\scss\_fonts.scss" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
@@ -474,6 +543,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AppConfigManager.cs" />
+    <Compile Include="Hubs\AuctionHub.cs" />
     <Compile Include="Models\AuctionModels\AuctionDescriptionViewModel.cs" />
     <Compile Include="Models\AuctionModels\AuctionViewModel.cs" />
     <Compile Include="Models\AuctionModels\LotInformationViewModel.cs" />
@@ -493,6 +563,9 @@
     <Compile Include="Models\AccountModels\RegisterViewModel.cs" />
     <Compile Include="Models\AccountModels\ResetPasswordViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\AuctionProcess.cs" />
+    <Compile Include="Tools\Models\LiveAuction.cs" />
+    <Compile Include="Tools\Models\WaitedAuction.cs" />
     <Compile Include="Util\AutofacConfig.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -533,7 +606,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\fonts\" />
     <Folder Include="Content\images\lots\" />
     <Folder Include="Content\js\" />
     <Folder Include="Views\Bids\" />

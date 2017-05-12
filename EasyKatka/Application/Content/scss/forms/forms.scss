@@ -1,0 +1,50 @@
+﻿.app-form .form-link {
+    text-decoration: none;
+    color: #202125;
+}
+
+    .app-form .form-link:hover {
+        color: #ff0d00;
+    }
+
+.app-form {
+    margin-top: 15px;
+}
+
+.app-form .form-group {
+    margin-bottom: 20px;
+}
+
+.app-form .form-submit {
+    margin-top: 10px;
+    background: #ec3228;
+    border-radius: 2px;
+    color: #fff;
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.app-form .form-submit:hover {
+    background: #ff0d00;
+}
+
+.app-form .form-input {
+    width: 100%;
+    padding: 8px 0;
+    font-size: 18px;
+    border-radius: 2px; 
+    border: none;
+    border-bottom: 1px solid #202125;
+    outline: none;
+}
+
+    .app-form .form-input:focus {
+        border-bottom: 1px solid #7397a3;
+    }
+
+.app-form .form-text-danger {
+    color: #ff0d00;  
+}

@@ -1,0 +1,26 @@
+﻿@import "../_colors.scss";
+
+.b-header {
+    @include main-gradient;
+    width: 100%;
+}
+
+.b-super-header {
+    &__nav {
+
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        float: left;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #fff;
+        border
+    }
+}

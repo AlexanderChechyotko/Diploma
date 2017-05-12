@@ -3,34 +3,19 @@
     ViewBag.Title = "Home";
 }
 
-<div class="blog-container">
-    <div class="filter-container clearfix">
-        <div class="filter">
-            <a class="filter-link" href="@Url.Action("Index", new { filter = "DateDesc" })">По дате+</a>
-        </div>
-        <div class="filter">
-            <a class="filter-link" href="@Url.Action("Index", new { filter = "Date" })">По дате-</a>
-        </div>
-    </div>
-    <div id="loadBtn" class="b-lots-container">
-        @foreach (var auction in Model)
-        {
-            <div class="b-lot">
-                <div class="b-lot__title">@Html.ActionLink(auction.Title, "Open", "Auction", new { id = auction.Id }, new { @class = "b-lot__title-link" })</div>
-                <div class="b-lot__image">
-                    <img src="@auction.ImagePath" alt="">
-                </div>
-                <div class="b-lot__time">@auction.TradingStart</div>
-                <div class="b-lot__cost">@auction.StartPrice</div>
-                <div class="b-lot__last-user">Alexander</div>
-                <div class="b-lot__button"><a href="#">Bid now</a></div>
+<div class="b-lots-container">
+    @foreach (var auction in Model)
+    {
+        <a href="@Url.Action("Open", "Auction", new { id = auction.Id })" class="b-lot">
+            <div class="b-lot__image">
+                <img src="~/Auction/GetImage?id=@auction.Id" alt="">
             </div>
-        }
-    </div>
+            <div class="b-lot__details">
+                <div class="b-lot__title">@auction.Title</div>
+                <div class="b-lot__time">@auction.TradingStart</div>
+                <div class="b-lot__cost">Стартовая цена: @auction.StartPrice</div>
+                <div class="b-lot__button">Подробнее</div>
+            </div>
+        </a>
+    }
 </div>
-
-@section scripts{
-    <script src='@Url.Content("~/Scripts/modules/auction.module.js")'></script>
-    <script src='@Url.Content("~/Scripts/app.js")'></script>
-
-}

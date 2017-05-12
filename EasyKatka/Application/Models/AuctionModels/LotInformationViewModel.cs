@@ -13,7 +13,6 @@ namespace Application.Models.AuctionModels
 
         public string Description { get; set; }
 
-        public string ImagePath { get; set; }
         [Required]
         public double StartPrice { get; set; }
 

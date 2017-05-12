@@ -17,6 +17,8 @@ namespace Application.Util
 {
     public static class AutofacConfig
     {
+		private static IContainer _container;
+
         public static void ConfigureContainer()
         {
             var builder = new ContainerBuilder();
@@ -29,12 +31,21 @@ namespace Application.Util
             RegisterServices(builder);
             RegisterManagers(builder);
 
-            var container = builder.Build();
-
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+            _container = builder.Build();
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(_container));
         }
 
-        private static void RegisterDbContext(ContainerBuilder builder)
+		public static IUserService GetUserContext()
+		{
+			return _container.Resolve<IUserService>();
+		}
+
+		public static IAuctionService GetAuctionContext()
+		{
+			return _container.Resolve<IAuctionService>();
+		}
+
+		private static void RegisterDbContext(ContainerBuilder builder)
         {
             builder.RegisterType<ApplicationContext>().As<DbContext>().SingleInstance();
         }
@@ -58,7 +69,8 @@ namespace Application.Util
             builder.RegisterType<CategoryService>().As<ICategoryService>().SingleInstance();
             builder.RegisterType<TagService>().As<ITagService>().SingleInstance();
             builder.RegisterType<AuctionService>().As<IAuctionService>().SingleInstance();
-        }
+			builder.RegisterType<EndedAuctionService>().As<IEndedAuctionService>().SingleInstance();
+		}
 
         private static void RegisterManagers(ContainerBuilder builder)
         {

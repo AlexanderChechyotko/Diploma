@@ -6,19 +6,20 @@
 <div class="b-auction">
     <div class="b-auction__block b-auction-information">
         <div class="b-auction-information__image">
-
+            <img src="~/Auction/GetImage?id=@Model.Id" alt="">
         </div>
         <div class="b-auction-information__title">@Model.Title</div>
         <div class="b-auction-information__start-time">@Model.TradingStart</div>
     </div>
     <div class="b-auction__block b-auction-interface">
-        <div id="auction-timer" class="b-auction-interface__timer">00:05</div>
+        <div id="auction-timer" class="b-auction-interface__timer">--:--</div>
+        <div id="auction-price" class="b-auction-interface__price">100</div>
         <div id="auction-button" class="b-auction-interface__button">Сделать ставку</div>
         <div id="auction-last-rate" class="b-auction-interface__last-rate">Igor</div>
     </div>
     <div class="b-auction__block b-user-rates">
         <ul class="b-user-rates__list">
-            <li class="b-user-rates__item">Alexander</li>
+            <li class="b-user-rates__item">@Model.UserName</li>
             <li class="b-user-rates__item">Egor Pidor</li>
             <li class="b-user-rates__item">Alexander</li>
             <li class="b-user-rates__item">Egor Pidor</li>
@@ -29,4 +30,33 @@
         </ul>
     </div>
 </div>
+
+@section scripts{
+    <script src="~/Scripts/jquery.signalR-2.2.2.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script type="text/javascript">
+    $(function () {
+        var auction = $.connection.auctionHub;
+
+        auction.client.invokeMessage = function(auctionId, ticks, currentPrice, lastUser) {
+            if (@Model.Id === auctionId) {
+                ticks = parseInt(ticks, 10);
+                let minutes = Math.floor(ticks / 60);
+                let seconds = ticks % 60;
+
+                $('#auction-timer').text(`${minutes}:${seconds}`);
+                $('auction-price').text(currentPrice);
+                $('#auction-last-rate').text(lastUser);
+            }
+        }
+
+        $.connection.hub.start().done(function () {
+
+            $('#auction-button').click(function () {
+                auction.server.placeBet(@Model.Id, '@Model.UserName');
+            });
+        });
+    });
+    </script>
+}
 

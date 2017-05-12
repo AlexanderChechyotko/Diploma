@@ -42,27 +42,42 @@ namespace Application.Controllers
         {
             if (ModelState.IsValid)
             {
-                string imagePath = $"{AppConfigManager.LotsImagesBasePath}/{ (new Random()).Next(10000, int.MaxValue)}{auctionVm.LotInformation.UploadedImage.FileName}";
-                if (auctionVm.LotInformation.UploadedImage != null)
+                if (auctionVm.LotInformation.UploadedImage != null && auctionVm.LotInformation.UploadedImage.ContentLength > 0)
                 {
-                    auctionVm.LotInformation.UploadedImage.SaveAs(imagePath);
+                    string userId = AuthenticationManager.User.Claims.ElementAt(0).Value;
+
+                    Auction auction = new Auction
+                    {
+                        LotPhoto = new LotPhoto
+                        {
+                            FileName = Path.GetFileName(auctionVm.LotInformation.UploadedImage.FileName),
+                            ContentType = auctionVm.LotInformation.UploadedImage.ContentType
+                        },
+                        Title = auctionVm.LotInformation.Title,
+                        StartPrice = auctionVm.LotInformation.StartPrice,
+                        TradingStart = auctionVm.TradingStart,
+                        UserId = userId,
+                    };
+                    using (var reader = new BinaryReader(auctionVm.LotInformation.UploadedImage.InputStream))
+                    {
+                        auction.LotPhoto.Content = reader.ReadBytes(auctionVm.LotInformation.UploadedImage.ContentLength);
+                    }
+
+                    await _auctionService.CreateAuction(auction);
+                    return RedirectToAction("Index", "Home");
                 }
-                string userId = AuthenticationManager.User.Claims.ElementAt(0).Value;
-
-                Auction auction = new Auction
-                {
-                    ImagePath = imagePath,
-                    Title = auctionVm.LotInformation.Title,
-                    StartPrice = auctionVm.LotInformation.StartPrice,
-                    TradingStart = auctionVm.TradingStart,
-                    UserId = userId,
-                };
-
-                await _auctionService.CreateAuction(auction);
-                return RedirectToAction("Index", "Home");
             }
 
             return View(auctionVm);
+        }
+
+        [AllowAnonymous]
+        public async Task<ActionResult> GetImage(int id)
+        {
+            var auction = _auctionService.GetAuctionById(id);
+            var fileToRetrieve = auction.LotPhoto;
+
+            return File(fileToRetrieve.Content, fileToRetrieve.ContentType);
         }
 
         [AllowAnonymous]
@@ -76,9 +91,10 @@ namespace Application.Controllers
                 return View("error");
             }
 
-            AuctionDescriptionViewModel model = AuctionDescriptionViewModel.BindModel(auction);
+			string userName = AuthenticationManager.User.Identity.Name;
+            AuctionDescriptionViewModel model = AuctionDescriptionViewModel.BindModel(auction, userName);
 
-            return View("Auction", model);
+			return View("Auction", model);
         }
     }
 }

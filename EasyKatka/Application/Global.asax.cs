@@ -13,7 +13,7 @@ namespace Application
             AutofacConfig.ConfigureContainer();
 
             AreaRegistration.RegisterAllAreas();
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
+			BundleConfig.RegisterBundles(BundleTable.Bundles);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }
