@@ -20,12 +20,12 @@
             </div>
             <div class="form-group">
                 @Html.LabelFor(x => x.TradingDateStart, "Дата проведения аукциона")<br>
-                <input type="date" name="TradingDateStart" value="" />
+                <input type="date" class="form-input" name="TradingDateStart" value="" />
                 @Html.ValidationMessageFor(m => m.TradingDateStart, "", new { @class = "form-text-danger" })
             </div>
             <div class="form-group">
                 @Html.LabelFor(x=> x.TradingDateStart, "Время проведения аукциона")<br>
-                <input type="time" name="TradingTimeStart" value="" />
+                <input type="time" class="form-input" name="TradingTimeStart" value="" />
                 @Html.ValidationMessageFor(m => m.TradingTimeStart, "", new { @class = "form-text-danger" })
             </div>
             <div class="form-group">

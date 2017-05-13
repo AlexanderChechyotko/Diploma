@@ -256,6 +256,7 @@
     <None Include="Content\scss\forms\forms.scss" />
     <None Include="Content\scss\main\header.scss" />
     <None Include="Content\scss\main\main.scss" />
+    <Content Include="Content\scss\main\not-found.scss" />
     <None Include="Content\scss\manage\manage.scss" />
     <None Include="Content\scss\manage\userList.scss" />
     <None Include="Content\scss\post\post.scss" />
@@ -599,6 +600,7 @@
     <Content Include="Views\Auction\Auction.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Views\NotFound\NotFound.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

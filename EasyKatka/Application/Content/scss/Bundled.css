@@ -182,10 +182,11 @@ body {
   border: none;
   border-bottom: 1px solid #202125;
   outline: none;
-  background: #f8f8f9; }
+  background: #f8f8f9;
+  box-sizing: border-box; }
 
 .app-form .form-input:focus {
-  border-bottom: 1px solid #7397a3; }
+  border-bottom: 2px solid #00a3d9; }
 
 .app-form .form-text-danger {
   color: #ff0d00; }
@@ -348,7 +349,8 @@ body {
     text-transform: uppercase; }
   .b-nav-button__line {
     background: #fff;
-    height: 1px; }
+    height: 1px;
+    margin: 0 auto; }
   .b-nav-button:hover .b-nav-button__line {
     -moz-animation: animate-nav-button .8s;
     -o-animation: animate-nav-button .8s;
