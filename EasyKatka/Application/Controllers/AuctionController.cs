@@ -14,6 +14,14 @@ namespace Application.Controllers
 {
     public class AuctionController : BaseController
     {
+		private List<string> _allowedMimetypes = new List<string>
+		{
+			"image/jpeg",
+			"image/pjpeg",
+			"image/png",
+			"image/svg+xml"
+		};
+
         private IUserService _userService;
 
         private IAuctionService _auctionService;
@@ -42,30 +50,41 @@ namespace Application.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (auctionVm.LotInformation.UploadedImage != null && auctionVm.LotInformation.UploadedImage.ContentLength > 0)
-                {
-                    string userId = AuthenticationManager.User.Claims.ElementAt(0).Value;
+				if (auctionVm.LotInformation.UploadedImage != null && auctionVm.LotInformation.UploadedImage.ContentLength > 0)
+				{
+					if (_allowedMimetypes.Contains(auctionVm.LotInformation.UploadedImage.ContentType))
+					{
+						string userId = AuthenticationManager.User.Claims.ElementAt(0).Value;
 
-                    Auction auction = new Auction
-                    {
-                        LotPhoto = new LotPhoto
-                        {
-                            FileName = Path.GetFileName(auctionVm.LotInformation.UploadedImage.FileName),
-                            ContentType = auctionVm.LotInformation.UploadedImage.ContentType
-                        },
-                        Title = auctionVm.LotInformation.Title,
-                        StartPrice = auctionVm.LotInformation.StartPrice,
-                        TradingStart = auctionVm.TradingStart,
-                        UserId = userId,
-                    };
-                    using (var reader = new BinaryReader(auctionVm.LotInformation.UploadedImage.InputStream))
-                    {
-                        auction.LotPhoto.Content = reader.ReadBytes(auctionVm.LotInformation.UploadedImage.ContentLength);
-                    }
+						Auction auction = new Auction
+						{
+							LotPhoto = new LotPhoto
+							{
+								FileName = Path.GetFileName(auctionVm.LotInformation.UploadedImage.FileName),
+								ContentType = auctionVm.LotInformation.UploadedImage.ContentType
+							},
+							Title = auctionVm.LotInformation.Title,
+							StartPrice = auctionVm.LotInformation.StartPrice,
+							TradingStart = auctionVm.TradingStart,
+							UserId = userId,
+						};
+						using (var reader = new BinaryReader(auctionVm.LotInformation.UploadedImage.InputStream))
+						{
+							auction.LotPhoto.Content = reader.ReadBytes(auctionVm.LotInformation.UploadedImage.ContentLength);
+						}
 
-                    await _auctionService.CreateAuction(auction);
-                    return RedirectToAction("Index", "Home");
-                }
+						await _auctionService.CreateAuction(auction);
+						return RedirectToAction("Index", "Home");
+					}
+					else
+					{
+						ModelState.AddModelError("LotPhoto", "Некорректный формат изображения");
+					}
+				}
+				else
+				{
+					ModelState.AddModelError("LotPhoto", "Изображение не было получено");
+				}
             }
 
             return View(auctionVm);
