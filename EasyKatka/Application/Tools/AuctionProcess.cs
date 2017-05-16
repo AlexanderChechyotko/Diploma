@@ -23,6 +23,8 @@ namespace Application.Tools
 
 		public event SendAuctionStateHandler SendState;
 
+		public event SendAuctionStateHandler SetWinner;
+
 		public AuctionProcess(IAuctionService auctionService)
 		{
 			_auctionService = auctionService;
@@ -78,21 +80,21 @@ namespace Application.Tools
 
 		private void TimerHandler(object obj)
 		{
-			//ParallelLoopResult result = Parallel.ForEach(_liveAuctions,
-			//	(x) =>
-			//	{
-			//		x.Value.Ticks--;
+			ParallelLoopResult result = Parallel.ForEach(_liveAuctions,
+				(x) =>
+				{
+					x.Value.Ticks--;
 
-			//		if (x.Value.Ticks <= 0)
-			//		{
-			//			if (SendState != null)
-			//			{
-			//				SendState(x.Value.AuctionId, 25, 100, x.Value.LastUser);
-			//			}
-			//		}
-			//	});
-
-			SendState(1, 25, 100, "sdfs");
+					if (x.Value.Ticks >= 0)
+					{
+						SendState?.Invoke(x.Value.AuctionId, x.Value.Ticks, x.Value.CurrentPrice, x.Value.LastUser);
+					}
+					else
+					{
+						SetWinner?.Invoke(x.Value.AuctionId, x.Value.Ticks, x.Value.CurrentPrice, x.Value.LastUser);
+						_waitedAuctions.Remove(x.Value.AuctionId);
+					}
+				});
 		}
 
 		public void Start()

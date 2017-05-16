@@ -12,21 +12,18 @@
         <div class="b-auction-information__start-time">@Model.TradingStart</div>
     </div>
     <div class="b-auction__block b-auction-interface">
-        <div id="auction-timer" class="b-auction-interface__timer">--:--</div>
-        <div id="auction-price" class="b-auction-interface__price">100</div>
+        <div id="auction-timer" class="b-auction-interface__timer">00:12</div>
+        <div id="auction-price" class="b-auction-interface__price">130</div>
         <div id="auction-button" class="b-auction-interface__button">Сделать ставку</div>
-        <div id="auction-last-rate" class="b-auction-interface__last-rate">Igor</div>
+        <div id="auction-last-rate" class="b-auction-interface__last-rate">@Model.UserName </div>
     </div>
     <div class="b-auction__block b-user-rates">
         <ul class="b-user-rates__list">
             <li class="b-user-rates__item">@Model.UserName</li>
-            <li class="b-user-rates__item">Egor Pidor</li>
-            <li class="b-user-rates__item">Alexander</li>
-            <li class="b-user-rates__item">Egor Pidor</li>
-            <li class="b-user-rates__item">Alexander</li>
-            <li class="b-user-rates__item">Egor Pidor</li>
-            <li class="b-user-rates__item">Alexander</li>
-            <li class="b-user-rates__item">Egor Pidor</li>
+            <li class="b-user-rates__item">Egor@yandex.ru</li>
+            <li class="b-user-rates__item">@Model.UserName</li>
+            <li class="b-user-rates__item">Svetlana@mail.ru</li>
+            <li class="b-user-rates__item">@Model.UserName</li>
         </ul>
     </div>
 </div>

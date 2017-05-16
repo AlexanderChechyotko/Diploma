@@ -9,7 +9,7 @@ namespace Application.App_Start
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 				"~/Content/css/main/main.css",
 				"~/Content/css/main/header.css",
-				"~/Content/scss/Bundled.css"));
+				"~/Content/scss/bundled.css"));
 		}
 	}
 }

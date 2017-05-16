@@ -245,7 +245,7 @@
     <None Include="Content\scss\auction\auction.scss" />
     <None Include="Content\scss\auction\lot-small-description.scss" />
     <Content Include="Content\scss\Bundled.css">
-      <DependentUpon>Bundled.scss</DependentUpon>
+      <DependentUpon>bundled.scss</DependentUpon>
     </Content>
     <Content Include="Content\scss\Bundled.min.css">
       <DependentUpon>Bundled.css</DependentUpon>
@@ -512,7 +512,7 @@
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Content\css\auction\lot-small-description.css" />
     <Content Include="Scripts\ckeditor\styles.js" />
-    <Content Include="Content\scss\Bundled.scss" />
+    <Content Include="Content\scss\bundled.scss" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
